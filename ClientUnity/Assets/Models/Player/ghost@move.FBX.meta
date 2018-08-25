@@ -8,11 +8,13 @@ ModelImporter:
     100004: food01
     100006: //RootNode
     100008: Object001
+    100010: food001
     400000: food002
     400002: food003
     400004: food01
     400006: //RootNode
     400008: Object001
+    400010: food001
     2100000: 02 - Default
     2300000: //RootNode
     2300002: Object001

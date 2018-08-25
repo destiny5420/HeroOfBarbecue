@@ -36,6 +36,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 	Transform m_Cam;
 	public string InputStringH;
 	public string InputStringV;
+	public GameObject Animators;
 
 
 
@@ -121,6 +122,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 //		if (HitObj.Count < 3) 
 //		{
 			Spear.SetActive (true);
+		Animators.GetComponent<Animator> ().Play ("attack");
 			Invoke ("AttackEnd", 2);
 //		}
 	}

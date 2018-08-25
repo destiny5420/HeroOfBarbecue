@@ -16,15 +16,15 @@ public class SpearCollider : MonoBehaviour {
 			if (HitObj.Count > 2) 
 			{
 
-				if (HitPoint1 [i].transform.name == HitObj [0]+"(Clone)") 
+				if (HitPoint1 [i].transform.name+"(Clone)" == HitObj [0]) 
 				{
 					HitPoint1 [i].SetActive (true);
 				}
-				if (HitPoint2 [i].transform.name == HitObj [1]+"(Clone)") 
+				if (HitPoint2 [i].transform.name+"(Clone)" == HitObj [1]) 
 				{
 					HitPoint2 [i].SetActive (true);
 				}
-				if (HitPoint3 [i].transform.name == HitObj [2]+"(Clone)") 
+				if (HitPoint3 [i].transform.name+"(Clone)" == HitObj [2]) 
 				{
 					HitPoint3 [i].SetActive (true);
 				}
@@ -32,30 +32,30 @@ public class SpearCollider : MonoBehaviour {
 			else if (HitObj.Count == 2) 
 			{
 
-				if (HitPoint1 [i].transform.name == HitObj [0]+"(Clone)") 
+				if (HitPoint1 [i].transform.name+"(Clone)" == HitObj [0]) 
 				{
 					HitPoint1 [i].SetActive (true);
 				}
-				if (HitPoint2 [i].transform.name == HitObj [1]+"(Clone)") 
+				if (HitPoint2 [i].transform.name+"(Clone)" == HitObj [1]) 
 				{
 					HitPoint2 [i].SetActive (true);
 				}
 			}
 			else if (HitObj.Count == 1) 
 			{
-				if (HitPoint1 [i].transform.name == HitObj [0]+"(Clone)") 
+				if (HitPoint1 [i].transform.name+"(Clone)" == HitObj [0]) 
 				{
 					HitPoint1 [i].SetActive (true);
 				}
 			}
 		}
 	}
-
 	void OnCollisionEnter(Collision collision)
 	{
 		if (collision.transform.tag == "Food") 
 		{
 			HitObj.Add (collision.transform.name);
 		}
+		Debug.Log (collision.transform.name);
 	}
 }
