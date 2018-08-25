@@ -27,4 +27,9 @@ public class UIMediator
         m_PlayerUIController = controller;
         m_PlayerUIController.Init();
     }
+
+    public void SetGameBaseTimer(float timer)
+    {
+        m_PlayerUIController.SetTimer(timer);
+    }
 }
