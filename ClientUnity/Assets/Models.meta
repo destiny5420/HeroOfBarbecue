@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:ClientUnity/Assets/Models.meta
 guid: 47c6c1352faf68149a788ffd0fc9790f
+=======
+guid: 0c1467ad7c0164d01bff85108c3fc61c
+>>>>>>> Developer:ClientUnity/Assets/SourceFile.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
