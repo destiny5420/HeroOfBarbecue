@@ -41,6 +41,12 @@ public class ThirdPersonCharacter : MonoBehaviour
 	public string InputStringH;
 	public string InputStringV;
 	public GameObject Animators;
+	public AudioClip HitSound;
+	public AudioClip DropSound;
+	public AudioClip EatSound;
+	public AudioClip WroundSound;
+	public AudioClip AttackSound;
+	public AudioClip DashSound;
 
     [SerializeField] SpearCollider m_SpearController;
 
@@ -125,6 +131,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 	public void Dash()
 	{
 		DashTarget = transform.position + transform.forward * DashSpeed;
+		GetComponent<AudioSource> ().PlayOneShot (DashSound);
 		isDash = true;
 	}
 
@@ -144,6 +151,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 	{
         GameLogic.GetInstance().PlayerProxy.SwitchState_Attack(PlayerID, true);
 		Animators.GetComponent<Animator> ().Play("attack");
+		GetComponent<AudioSource> ().PlayOneShot (AttackSound);
 	}
 
     public void Eat()
@@ -153,8 +161,13 @@ public class ThirdPersonCharacter : MonoBehaviour
         if (SuccessGetScore())
         {
             Debug.LogError("SuccessGetScore");
-            GameLogic.GetInstance().WantedProxy.CreateNewList(PlayerID);
+			GameLogic.GetInstance().WantedProxy.CreateNewList(PlayerID);
+			GetComponent<AudioSource> ().PlayOneShot (EatSound);
         }
+		else
+		{
+			GetComponent<AudioSource> ().PlayOneShot (WroundSound);
+		}
 
         GameLogic.GetInstance().PlayerProxy.CleanFoodList(PlayerID);
     }
@@ -363,6 +376,8 @@ public class ThirdPersonCharacter : MonoBehaviour
 		{
 			//Get Hit
 			Debug.Log(collision.transform.name);
+			GetComponent<AudioSource> ().PlayOneShot (HitSound);
+			collision.gameObject.GetComponent<AudioSource> ().PlayOneShot (DropSound);
 		}
 	}
 

@@ -28,6 +28,7 @@ public class SpearCollider : MonoBehaviour {
 
     [SerializeField] BoxCollider m_colBox;
     bool bIsHitTarget;
+	public AudioClip HitSound;
 
     public void Init()
     {
@@ -97,8 +98,10 @@ public class SpearCollider : MonoBehaviour {
             FruitController obj = other.transform.parent.GetComponent<FruitController>();
 
             GameLogic.GetInstance().PlayerProxy.IncreaseFoodList(m_ThirdPersonCharacter.PlayerID, obj.Name);
+			GetComponent<AudioSource> ().PlayOneShot (HitSound);
 
             Debug.Log("OnTriggerEnter / other name: " + obj.Name);
+
         }
     }
 
