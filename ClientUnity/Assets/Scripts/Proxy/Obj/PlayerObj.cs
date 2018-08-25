@@ -43,6 +43,12 @@ public class PlayerObj
         }
     }
 
+    public void CleanFruit()
+    {
+        for (int i = 0; i < sAryFruitList.Length; i++)
+            sAryFruitList[i] = "";
+    }
+
     public string[] arrayListName
     {
         get {

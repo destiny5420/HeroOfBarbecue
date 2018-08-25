@@ -46,6 +46,12 @@ public class PlayerProxy
 
     }
 
+    public void CleanFoodList(int playerID)
+    {
+        m_dicPlayerObj[playerID].CleanFruit();
+        GameLogic.GetInstance().PlayerMediator.UpdatePlayerFruiltList(playerID);
+    }
+
     public void SwitchState_Attack(int playerID, bool key)
     {
         m_dicPlayerObj[playerID].attacking = key;

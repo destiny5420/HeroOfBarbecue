@@ -143,6 +143,12 @@ public class ThirdPersonCharacter : MonoBehaviour
 		Animators.GetComponent<Animator> ().Play("attack");
 	}
 
+    public void Eat()
+    {
+        Debug.Log("Eat / PlayerID: " + PlayerID + 1);
+        GameLogic.GetInstance().PlayerProxy.CleanFoodList(PlayerID + 1);
+    }
+
     public void AttackComplete ()
 	{
         GameLogic.GetInstance().PlayerProxy.SwitchState_Attack(PlayerID + 1, false);

@@ -50,10 +50,10 @@ public class PlayerMediator
 		{
 			m_clsPlayerController1.Attack ();
 		}
-//		else if (ioType == IO_TYPE.Press_Up || ioType == IO_TYPE.Press_Down || ioType == IO_TYPE.Press_Left || ioType == IO_TYPE.Press_Right) 
-//		{
-//			m_clsPlayerController1.DoMove ("Horizontal","Vertical");
-//		}
+        else if (ioType == IO_TYPE.Press_Eat)
+        {
+            m_clsPlayerController1.Eat();
+        }
     }
 
 	public void Player_2_IO(IO_TYPE ioType)
@@ -71,10 +71,10 @@ public class PlayerMediator
 		{
 			m_clsPlayerController2.Attack ();
 		}
-//		else if (ioType == IO_TYPE.Press_Up || ioType == IO_TYPE.Press_Down || ioType == IO_TYPE.Press_Left || ioType == IO_TYPE.Press_Right) 
-//		{
-//			m_clsPlayerController1.DoMove ("Horizontal2","Vertical2");
-//		}
+        else if (ioType == IO_TYPE.Press_Eat)
+        {
+            m_clsPlayerController2.Eat();
+        }
     }
 
     public void UpdatePlayerFruiltList(int playerID)
