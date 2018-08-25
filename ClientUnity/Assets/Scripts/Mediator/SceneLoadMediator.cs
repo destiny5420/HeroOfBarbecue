@@ -7,6 +7,7 @@ public class SceneLoadMediator
     public enum LOAD_SCENE_TYPE
     {
         ToMenu = 0,
+        ToGameBase,
     }
 
     public void Start()
@@ -29,6 +30,11 @@ public class SceneLoadMediator
             case LOAD_SCENE_TYPE.ToMenu:
                 {
                     SceneManager.LoadScene("GameMenu");
+                }
+                break;
+            case LOAD_SCENE_TYPE.ToGameBase:
+                {
+                    SceneManager.LoadScene("GameBase");
                 }
                 break;
         }

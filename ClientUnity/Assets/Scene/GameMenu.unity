@@ -484,7 +484,17 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1287203555}
+      objectReference: {fileID: 1287203556}
+    - target: {fileID: 114289933137226190, guid: 9e166b4e3603f4493b92db407b5e125e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114289933137226190, guid: 9e166b4e3603f4493b92db407b5e125e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e166b4e3603f4493b92db407b5e125e, type: 2}
   m_IsPrefabParent: 0
@@ -506,7 +516,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1287203555}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e46e76e4661564ff991777317f80a69f, type: 3}
+  m_Script: {fileID: 11500000, guid: 09bd8a97885d54ac68bba86d2869fa5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1306050792
