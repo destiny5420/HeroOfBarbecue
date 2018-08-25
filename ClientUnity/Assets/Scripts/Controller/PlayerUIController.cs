@@ -37,6 +37,11 @@ public class PlayerUIController : MonoBehaviour
 
     bool m_bStartGame;
 
+    bool m_bDelayHideGo;
+    const float m_fDefaultDelayGoTime = 0.0f;
+    const float m_fDelayHideGoTime = 1.0f;
+    float m_fDelayHideGoTimeClock;
+
     void Awake()
     {
         GameLogic.GetInstance().UIMediator.Regist_PlayerUIController(this);
@@ -64,6 +69,14 @@ public class PlayerUIController : MonoBehaviour
             if (m_fDelayGoClock >= m_fDelayGoTime)
                 OnDelayGoComplete();
         }
+
+        if (m_bDelayHideGo)
+        {
+            m_fDelayHideGoTimeClock += Time.deltaTime;
+
+            if (m_fDelayHideGoTimeClock >= m_fDelayHideGoTime)
+                OnDelayHideGoTimeComplete();
+        }
     }
 
     void LateUpdate()
@@ -90,6 +103,9 @@ public class PlayerUIController : MonoBehaviour
         m_fDelayGoClock = m_fDefaultDelayGoClock;
 
         m_bStartGame = false;
+
+        m_bDelayHideGo = false;
+        m_fDelayHideGoTimeClock = m_fDefaultDelayGoTime;
     }
 
     public void SetTimer(float timer)
@@ -143,6 +159,7 @@ public class PlayerUIController : MonoBehaviour
         if (m_bStartGame)
         {
             Debug.Log("Go");
+            m_bDelayHideGo = true;
         }
         else
             Handle_DelayGo();
@@ -153,6 +170,13 @@ public class PlayerUIController : MonoBehaviour
         bDelayGo = false;
 
         Handle_Go();
+    }
+
+    void OnDelayHideGoTimeComplete()
+    {
+        m_bDelayHideGo = false;
+        SettingMessage("");
+        m_rectTranReadyPanel.transform.position = m_v3ReadyPanelHidePos;
     }
     #endregion
 }
