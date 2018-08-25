@@ -33,8 +33,6 @@ public class UIMediator
     {
         m_PlayerUIController.SetTimer(timer);
     }
-<<<<<<< HEAD
-=======
 
     public void Hide_PlayerWinnerPanel()
     {
@@ -45,5 +43,4 @@ public class UIMediator
     {
         m_PlayerUIController.GameOver();
     }
->>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
 }

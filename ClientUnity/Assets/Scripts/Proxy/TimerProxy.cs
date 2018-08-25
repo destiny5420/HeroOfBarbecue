@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class TimerProxy
 {
-<<<<<<< HEAD
-    const float m_fDefaultGameBaseTime = 300.0f;
-=======
     const float m_fDefaultGameBaseTime = 5.0f;
     const float m_fGameBaseTimeOfOver = 1.0f;
->>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
     bool m_bStart_GameBaseClock;
     float m_fGameBaseClock;
 
@@ -33,9 +29,6 @@ public class TimerProxy
     void GameBaseClock()
     {
         m_fGameBaseClock -= Time.deltaTime;
-<<<<<<< HEAD
-        GameLogic.GetInstance().UIMediator.SetGameBaseTimer((int)m_fGameBaseClock);
-=======
 
         if (CheckTimeOut() == false)
             GameLogic.GetInstance().UIMediator.SetGameBaseTimer((int)m_fGameBaseClock);
@@ -55,7 +48,6 @@ public class TimerProxy
         }
 
         return false;
->>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
     }
 
     #region Hanedle

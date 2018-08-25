@@ -51,13 +51,10 @@ public class PlayerUIController : MonoBehaviour
     {
         m_txtTimer.text = timer.ToString();
     }
-<<<<<<< HEAD
-=======
 
     public void GameOver()
     {
         bRotShiny = true;
         m_rectTranWinnerPanel.transform.position = m_v3WinnerPanelShowPos;
     }
->>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
 }
