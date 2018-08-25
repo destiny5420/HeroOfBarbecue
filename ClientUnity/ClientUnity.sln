@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUnity", "ClientUnity.csproj", "{00C1D703-EB05-B945-D83A-F0D353F40DBF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUnity.Plugins", "ClientUnity.Plugins.csproj", "{E0D7D6E4-B2DD-9ABD-D307-33A3B90D2992}"
