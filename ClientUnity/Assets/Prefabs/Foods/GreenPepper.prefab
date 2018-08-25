@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4235031781885156}
   - component: {fileID: 33690365648320830}
   - component: {fileID: 23453391728511436}
+  - component: {fileID: 54778218016323748}
   m_Layer: 0
   m_Name: GreenPepper
   m_TagString: Untagged
@@ -82,3 +83,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441991647724686}
   m_Mesh: {fileID: 4300000, guid: b7680bbcbf072c0429ada253ace14870, type: 3}
+--- !u!54 &54778218016323748
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1441991647724686}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
