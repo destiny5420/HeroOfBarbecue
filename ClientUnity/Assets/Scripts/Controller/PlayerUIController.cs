@@ -175,6 +175,7 @@ public class PlayerUIController : MonoBehaviour
     void OnDelayHideGoTimeComplete()
     {
         m_bDelayHideGo = false;
+        GameLogic.GetInstance().TimerProxy.Handle_GameBaseClock();
         SettingMessage("");
         m_rectTranReadyPanel.transform.position = m_v3ReadyPanelHidePos;
     }
