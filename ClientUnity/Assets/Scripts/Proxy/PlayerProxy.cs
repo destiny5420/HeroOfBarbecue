@@ -7,7 +7,6 @@ public class PlayerProxy
     
     public void Start () 
     {
-		
 	}
 	
     public void Init()
@@ -17,6 +16,5 @@ public class PlayerProxy
 
 	void Update () 
     {
-		
 	}
 }
