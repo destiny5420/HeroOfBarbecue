@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitTest : MonoBehaviour {
+public class TestSctipt : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,12 +10,11 @@ public class HitTest : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	void OnCollisionEnter(Collision collision)
+	void Update () 
 	{
-		Debug.Log (collision.transform.name);
+		if (Input.GetKeyDown (KeyCode.A)) 
+		{
+			GameLogic.GetInstance ().WantedProxy.Player1CreatNewList ();
+		}
 	}
 }

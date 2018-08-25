@@ -13,6 +13,7 @@ public class FoodGenerator : MonoBehaviour {
     public GameObject Food3;
     public GameObject Food4;
     public GameObject Food5;
+	public List<GameObject> AllFoods;
 
     public int DropSpeed = 2;
 
