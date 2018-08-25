@@ -139,19 +139,14 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 	public void Attack()
 	{
-//		if (HitObj.Count < 3) 
-//		{
-    		//Spear.GetComponent<BoxCollider>().enabled = true;
-    		Animators.GetComponent<Animator> ().Play ("attack");
-			//Invoke ("AttackEnd", 2);
-//		}
+        GameLogic.GetInstance().PlayerProxy.SwitchState_Attack(PlayerID + 1, true);
+		Animators.GetComponent<Animator> ().Play("attack");
 	}
 
-	public void AttackEnd ()
+    public void AttackComplete ()
 	{
-		//Spear.GetComponent<BoxCollider>().enabled = false;
+        GameLogic.GetInstance().PlayerProxy.SwitchState_Attack(PlayerID + 1, false);
 	}
-
 
 	void ScaleCapsuleForCrouching(bool crouch)
 	{

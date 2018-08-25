@@ -46,8 +46,24 @@ public class PlayerProxy
 
     }
 
+    public void SwitchState_Attack(int playerID, bool key)
+    {
+        m_dicPlayerObj[playerID].attacking = key;
+    }
+
     public string[] GetPlayFruitListName(int playerID)
     {
         return m_dicPlayerObj[playerID].arrayListName;
+    }
+
+    public bool CheckCanController(int playerID)
+    {
+        if (m_dicPlayerObj[playerID].beAttack)
+            return false;
+
+        if (m_dicPlayerObj[playerID].attacking)
+            return false;
+
+        return true;
     }
 }

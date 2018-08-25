@@ -9,12 +9,17 @@ public class PlayerObj
     float fSpeed;
     string[] sAryFruitList;
 
+    // State
+    bool bBeAttack;
+    bool bAttacking;
+
     public PlayerObj()
     {
         iHp = 100;
         iStr = 10;
         fSpeed = 10;
-
+        bBeAttack = false;
+        bAttacking = false;
         CreateHitNameData();
     }
 
@@ -54,5 +59,22 @@ public class PlayerObj
         }
 
         return false;
+    }
+
+    public bool attacking
+    {
+        get{
+            return bAttacking;
+        }
+        set{
+            bAttacking = value;
+        }
+    }
+
+    public bool beAttack
+    {
+        get {
+            return bBeAttack;
+        }
     }
 }

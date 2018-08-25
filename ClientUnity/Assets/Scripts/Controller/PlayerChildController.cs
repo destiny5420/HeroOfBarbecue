@@ -15,4 +15,9 @@ public class PlayerChildController : MonoBehaviour
     {
         m_ThirdPersonCharacter.WeaponCollider_Close();
     }
+
+    public void AttackComplete()
+    {
+        m_ThirdPersonCharacter.AttackComplete();
+    }
 }
