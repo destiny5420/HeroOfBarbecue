@@ -160,6 +160,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a9f6a0fa7aab4a858b1d38f9dd514dd, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &988827445 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1790538247064986, guid: 263ab2f687ee241b4947e3527bbc69a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1203132789}
+--- !u!114 &988827446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 988827445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fe422dc2dd9465e972101940961bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FruitMother: {fileID: 988827448}
+  FruitCreated: []
+  FruitKind:
+  - {fileID: 1553546085029970, guid: a599a7ecd50bdcd46aff94855a6323f5, type: 2}
+  - {fileID: 1398715986442494, guid: a51a4ca879c31d34c85e56aab83be493, type: 2}
+  - {fileID: 1045086515892188, guid: facd74b67c15651459c59ef25e5dd1d9, type: 2}
+  - {fileID: 1666573159764702, guid: 911f232f517eb874a84d2abdf07cacaa, type: 2}
+  - {fileID: 1430927171055780, guid: 38a8c425593515c4f95b2a9cb4dc86f5, type: 2}
+  MaxCount: 10
+--- !u!4 &988827448 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4013763586538156, guid: 263ab2f687ee241b4947e3527bbc69a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1203132789}
 --- !u!1001 &1003933420
 Prefab:
   m_ObjectHideFlags: 0
@@ -391,6 +421,11 @@ Prefab:
     - target: {fileID: 4013763586538156, guid: 263ab2f687ee241b4947e3527bbc69a6, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114328759543504436, guid: 263ab2f687ee241b4947e3527bbc69a6,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 263ab2f687ee241b4947e3527bbc69a6, type: 2}
