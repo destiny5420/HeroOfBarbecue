@@ -41,6 +41,8 @@ public class TimerProxy
             m_fGameBaseClock = 0.0f;
             m_bStart_GameBaseClock = false;
             GameLogic.GetInstance().UIMediator.SetGameBaseTimer((int)m_fGameBaseClock);
+
+            GameLogic.GetInstance().UIMediator.GameOver();
             Debug.LogWarning("Time is over!!");
             return true;
         }

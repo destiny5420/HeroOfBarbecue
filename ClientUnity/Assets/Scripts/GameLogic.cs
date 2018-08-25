@@ -72,6 +72,12 @@ public class GameLogic : MonoBehaviour
         m_TimeProxy.Update();
     }
 
+    public void StartGame()
+    {
+        UIMediator.Init();
+        TimerProxy.Handle_GameBaseClock();
+    }
+
     #region Proxy & Mediator
     public PlayerMediator PlayerMediator
     {
