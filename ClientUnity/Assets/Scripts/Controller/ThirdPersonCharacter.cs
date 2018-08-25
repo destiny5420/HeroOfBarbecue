@@ -35,6 +35,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 	private Vector3 DashTarget;
 	private Vector3 m_CamForward;
 	private Vector3 m_Move;
+	private bool inWall;
 	private bool isDash;
 	public GameObject Spear;
 	Transform m_Cam;
@@ -130,9 +131,12 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 	public void Dash()
 	{
-		DashTarget = transform.position + transform.forward * DashSpeed;
-		GetComponent<AudioSource> ().PlayOneShot (DashSound);
-		isDash = true;
+		if (!inWall) 
+		{
+			DashTarget = transform.position + transform.forward * DashSpeed;
+			GetComponent<AudioSource> ().PlayOneShot (DashSound);
+			isDash = true;
+		}
 	}
 
     public void WeaponCollider_Open()
@@ -383,12 +387,21 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 	void OnCollisionStay(Collision collision)
 	{
-		if (collision.transform.name == "Walls" && isDash) 
+		if (collision.transform.name == "Walls") 
 		{
-			//Get Hit
+			inWall = true;
 			isDash = false;
 		}
 	}
+
+	void OnCollisionExit(Collision collision)
+	{
+		if (collision.transform.name == "Walls") 
+		{
+			inWall = false;
+		}
+	}
+
 
     public void UpdateFruiltList()
     {
