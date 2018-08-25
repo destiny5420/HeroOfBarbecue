@@ -42,6 +42,10 @@ public class PlayerMediator
 		{
 			m_clsPlayerController1.Dash ();
 		}
+		else if (ioType == IO_TYPE.Press_Attack) 
+		{
+			m_clsPlayerController1.Attack ();
+		}
     }
 
 	public void Player_2_IO(IO_TYPE ioType)
@@ -50,6 +54,10 @@ public class PlayerMediator
 		if (ioType == IO_TYPE.Press_Dash) 
 		{
 			m_clsPlayerController2.Dash ();
+		}
+		else if (ioType == IO_TYPE.Press_Attack) 
+		{
+			m_clsPlayerController2.Attack ();
 		}
     }
 }

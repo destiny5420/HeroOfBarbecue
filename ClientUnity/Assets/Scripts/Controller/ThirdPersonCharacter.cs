@@ -29,6 +29,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 	public float DashSpeed;
 	private Vector3 DashTarget;
 	private bool isDash;
+	public GameObject Spear;
 
 
 
@@ -101,6 +102,17 @@ public class ThirdPersonCharacter : MonoBehaviour
 	{
 		DashTarget = transform.position + transform.forward * DashSpeed;
 		isDash = true;
+	}
+
+	public void Attack()
+	{
+		Spear.SetActive (true);
+		Invoke ("AttackEnd", 2);
+	}
+
+	public void AttackEnd ()
+	{
+		Spear.SetActive (false);
 	}
 
 
@@ -247,6 +259,14 @@ public class ThirdPersonCharacter : MonoBehaviour
 			m_IsGrounded = false;
 			m_GroundNormal = Vector3.up;
 			m_Animator.applyRootMotion = false;
+		}
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.transform.tag == "Player") 
+		{
+			//Get Hit
 		}
 	}
 }
