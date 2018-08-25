@@ -35,13 +35,21 @@ public class PlayerMediator
         m_clsPlayerController2 = r_playerController;
     }
 
-    public void Player_1_IO(IO_TYPE ioType)
+	public void Player_1_IO(IO_TYPE ioType)
     {
         Debug.Log("Player_1_IO / IO: " + ioType.ToString());
+		if (ioType == IO_TYPE.Press_Dash) 
+		{
+			m_clsPlayerController1.Dash ();
+		}
     }
 
-    public void Player_2_IO(IO_TYPE ioType)
+	public void Player_2_IO(IO_TYPE ioType)
     {
-        Debug.Log("Player_2_IO / IO: " + ioType.ToString());
+		Debug.Log("Player_2_IO / IO: " + ioType.ToString());
+		if (ioType == IO_TYPE.Press_Dash) 
+		{
+			m_clsPlayerController2.Dash ();
+		}
     }
 }

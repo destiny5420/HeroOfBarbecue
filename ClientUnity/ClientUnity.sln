@@ -1,9 +1,4 @@
 ﻿
-<<<<<<< HEAD
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUnity", "ClientUnity.csproj", "{00C1D703-EB05-B945-D83A-F0D353F40DBF}"
-=======
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUnity", "Assembly-CSharp.csproj", "{D2BEA3FA-1164-720C-6FAA-670BDD7150D7}"
@@ -11,7 +6,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUnity", "Assembly-CSharp-firstpass.csproj", "{F869E2FB-3647-5D64-B5B8-418042D45E98}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUnity", "Assembly-CSharp-Editor-firstpass.csproj", "{D5267D9B-05EC-E56F-8700-90AF30E22DF1}"
->>>>>>> Developer
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

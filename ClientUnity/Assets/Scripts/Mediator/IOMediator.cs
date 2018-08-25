@@ -35,7 +35,15 @@ public class IOMediator
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             IO_Player1(IO_TYPE.Press_Right);
-        }
+		}
+		else if (Input.GetKeyDown(KeyCode.Comma))
+		{
+			IO_Player1(IO_TYPE.Press_Dash);
+		}
+		else if (Input.GetKeyDown(KeyCode.Period))
+		{
+			IO_Player1(IO_TYPE.Press_Attack);
+		}
 
         // Player2
         if (Input.GetKeyDown(KeyCode.W))
@@ -53,7 +61,15 @@ public class IOMediator
         else if (Input.GetKeyDown(KeyCode.D))
         {
             IO_Player2(IO_TYPE.Press_Right);
-        }
+		}
+		else if (Input.GetKeyDown(KeyCode.Z))
+		{
+			IO_Player2(IO_TYPE.Press_Dash);
+		}
+		else if (Input.GetKeyDown(KeyCode.X))
+		{
+			IO_Player2(IO_TYPE.Press_Attack);
+		}
     }
 
     public void IO_Player1(IO_TYPE ioType)

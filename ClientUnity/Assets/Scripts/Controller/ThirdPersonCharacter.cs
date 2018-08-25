@@ -26,6 +26,9 @@ public class ThirdPersonCharacter : MonoBehaviour
 	Vector3 m_CapsuleCenter;
 	CapsuleCollider m_Capsule;
 	bool m_Crouching;
+	public float DashSpeed;
+	private Vector3 DashTarget;
+	private bool isDash;
 
 
 
@@ -46,6 +49,18 @@ public class ThirdPersonCharacter : MonoBehaviour
 		else
 		{
 			GameLogic.GetInstance ().PlayerMediator.RegistPlayerController2 (GetComponent<ThirdPersonCharacter>());
+		}
+	}
+
+	void Update()
+	{
+		if (isDash) 
+		{
+			transform.position = Vector3.Lerp (transform.position, DashTarget, Time.deltaTime * 5);
+			if (Vector3.Distance (transform.position, DashTarget) < 1f) 
+			{
+				isDash = false;
+			}
 		}
 	}
 
@@ -80,6 +95,12 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 		// send input and other state parameters to the animator
 		UpdateAnimator(move);
+	}
+
+	public void Dash()
+	{
+		DashTarget = transform.position + transform.forward * DashSpeed;
+		isDash = true;
 	}
 
 
