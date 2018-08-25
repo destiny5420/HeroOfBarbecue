@@ -20,6 +20,7 @@ public class GameLogic : MonoBehaviour
     PlayerProxy m_PlayerProxy;
     TimerProxy m_TimeProxy;
     GameProxy m_GameProxy;
+	WantedProxy m_WantedProxy;
 
     void Awake()
     {
@@ -36,6 +37,7 @@ public class GameLogic : MonoBehaviour
         m_PlayerProxy = new PlayerProxy();
         m_TimeProxy = new TimerProxy();
         m_GameProxy = new GameProxy();
+		m_WantedProxy = new WantedProxy ();
 
         DontDestroyOnLoad(this);
     }
@@ -52,7 +54,7 @@ public class GameLogic : MonoBehaviour
         m_PlayerProxy.Start();
         m_TimeProxy.Start();
         m_GameProxy.Start();
-
+		m_WantedProxy.Start ();
         Init();
     }
 
@@ -65,8 +67,8 @@ public class GameLogic : MonoBehaviour
 
         m_PlayerProxy.Init();
         m_TimeProxy.Init();
-        m_GameProxy.Init();
-
+		m_GameProxy.Init();
+		m_WantedProxy.Init ();
         SceneLoadMediator.Load(SceneLoadMediator.LOAD_SCENE_TYPE.ToMenu);
     }
 
@@ -131,5 +133,12 @@ public class GameLogic : MonoBehaviour
             return m_GameProxy;
         }
     }
+
+	public WantedProxy WantedProxy
+	{
+		get{
+			return m_WantedProxy;
+		}
+	}
     #endregion
 }
