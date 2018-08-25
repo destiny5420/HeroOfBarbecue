@@ -1,0 +1,6 @@
+Temp/
+Library/
+Unity.*
+UnityPackageManager/
+.vs
+*.csproj
