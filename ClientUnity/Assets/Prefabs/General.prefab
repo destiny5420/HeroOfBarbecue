@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6557a4928f47a4531a8368e7ecb4d461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Food1: {fileID: 1399121978483476, guid: a599a7ecd50bdcd46aff94855a6323f5, type: 2}
-  Food2: {fileID: 1013740982649606, guid: a51a4ca879c31d34c85e56aab83be493, type: 2}
-  Food3: {fileID: 1441991647724686, guid: facd74b67c15651459c59ef25e5dd1d9, type: 2}
-  Food4: {fileID: 1054034454413674, guid: 911f232f517eb874a84d2abdf07cacaa, type: 2}
-  Food5: {fileID: 1208029284438810, guid: 38a8c425593515c4f95b2a9cb4dc86f5, type: 2}
+  Food1: {fileID: 1553546085029970, guid: a599a7ecd50bdcd46aff94855a6323f5, type: 2}
+  Food2: {fileID: 1398715986442494, guid: a51a4ca879c31d34c85e56aab83be493, type: 2}
+  Food3: {fileID: 1045086515892188, guid: facd74b67c15651459c59ef25e5dd1d9, type: 2}
+  Food4: {fileID: 1666573159764702, guid: 911f232f517eb874a84d2abdf07cacaa, type: 2}
+  Food5: {fileID: 1430927171055780, guid: 38a8c425593515c4f95b2a9cb4dc86f5, type: 2}
   DropSpeed: 2
