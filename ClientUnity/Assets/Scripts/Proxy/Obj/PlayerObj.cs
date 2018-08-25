@@ -44,4 +44,15 @@ public class PlayerObj
             return sAryFruitList;
         }
     }
+
+    public bool CheckCanAddFruilt()
+    {
+        for (int i = 0; i < sAryFruitList.Length; i++)
+        {
+            if (sAryFruitList[i] == "")
+                return true;
+        }
+
+        return false;
+    }
 }

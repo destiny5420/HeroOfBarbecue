@@ -3100,11 +3100,20 @@ MonoBehaviour:
   - {fileID: 33643890817581116}
   - {fileID: 33595474577497826}
   - {fileID: 33953639376425352}
+  meshRenderers:
+  - {fileID: 23982982958568074}
+  - {fileID: 23498134681993220}
+  - {fileID: 23759185274002844}
   mesCorn: {fileID: 4300000, guid: dc30acedda2f86e48aece23fc5ab2ca4, type: 3}
   meshFish: {fileID: 4300002, guid: 06a15ad6f2ac09542bfdeafd2810e65f, type: 3}
   mesGreenPepper: {fileID: 4300000, guid: b7680bbcbf072c0429ada253ace14870, type: 3}
   mesMeat: {fileID: 4300002, guid: a8d260a72b2d4574b8e27169c3240b98, type: 3}
   mesMushroom: {fileID: 4300002, guid: 36328005e6a44df4cbb98bb11429a2bd, type: 3}
+  matCorn: {fileID: 2100000, guid: 920357d0b15e9b44691b1b79dcd52955, type: 2}
+  matFish: {fileID: 2100000, guid: c77e8197e9b0d7043a0fe973a3affc47, type: 2}
+  matGreenPepper: {fileID: 2100000, guid: 6a8fdc9047622934f822eabf087ec029, type: 2}
+  matMeat: {fileID: 2100000, guid: e5d1a718632fd5241be00e9f3956e0d9, type: 2}
+  matMushroom: {fileID: 2100000, guid: 76ac43d1b8cf36141b06ea322bb9e4b2, type: 2}
   m_colBox: {fileID: 65023453496042930}
 --- !u!114 &114253399129549306
 MonoBehaviour:

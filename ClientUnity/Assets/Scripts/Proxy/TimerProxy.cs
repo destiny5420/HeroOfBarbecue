@@ -11,7 +11,7 @@ public class TimerProxy
 
     bool bSpawnFruit;
     const float m_fDefaultSpawnFruitClock = 0.0f;
-    const float m_fSpawnFruitTime = 5.0f;
+    const float m_fSpawnFruitTime = 60.0f;
     float m_fSpawnFruitClock;
 
     public void Start()

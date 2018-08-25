@@ -12,12 +12,20 @@ public class SpearCollider : MonoBehaviour {
 
 
     [SerializeField] MeshFilter[] mesFilterFruits;
+    [SerializeField] MeshRenderer[] meshRenderers;
 
     [SerializeField] Mesh mesCorn;
     [SerializeField] Mesh meshFish;
     [SerializeField] Mesh mesGreenPepper;
     [SerializeField] Mesh mesMeat;
     [SerializeField] Mesh mesMushroom;
+
+    [SerializeField] Material matCorn;
+    [SerializeField] Material matFish;
+    [SerializeField] Material matGreenPepper;
+    [SerializeField] Material matMeat;
+    [SerializeField] Material matMushroom;
+
     [SerializeField] BoxCollider m_colBox;
     bool bIsHitTarget;
 
@@ -108,6 +116,11 @@ public class SpearCollider : MonoBehaviour {
 
         for (int i = 0; i < fruitName.Length; i++)
         {
+            Debug.Log("["+i+"] fruitName : " + fruitName[i]);
+        }
+
+        for (int i = 0; i < fruitName.Length; i++)
+        {
             if (fruitName[i] == "")
             {
                 mesFilterFruits[i].gameObject.SetActive(false);
@@ -115,7 +128,11 @@ public class SpearCollider : MonoBehaviour {
             }
 
             Mesh tmpMesh = GetMesh(fruitName[i]);
+            Material tmpMat = GetMaterial(fruitName[i]);
+
+            meshRenderers[i].material = tmpMat;
             mesFilterFruits[i].mesh = tmpMesh;
+            mesFilterFruits[i].gameObject.SetActive(true);
         }
     }
 
@@ -133,6 +150,25 @@ public class SpearCollider : MonoBehaviour {
                 return mesMeat;
             case "Mushroom":
                 return mesMushroom;
+            default:
+                return null;
+        }
+    }
+
+    Material GetMaterial(string fruitName)
+    {
+        switch (fruitName)
+        {
+            case "Corn":
+                return matCorn;
+            case "Fish":
+                return matFish;
+            case "GreenPepper":
+                return matGreenPepper;
+            case "Meat":
+                return matMeat;
+            case "Mushroom":
+                return matMushroom;
             default:
                 return null;
         }
