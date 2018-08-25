@@ -124,12 +124,24 @@ public class ThirdPersonCharacter : MonoBehaviour
 		isDash = true;
 	}
 
+    public void WeaponCollider_Open()
+    {
+        Debug.LogWarning("WeaponCollider_Open");
+        m_SpearController.SwitchCollider(true);
+    }
+
+    public void WeaponCollider_Close()
+    {
+        Debug.LogWarning("WeaponCollider_Close");
+        m_SpearController.SwitchCollider(false);
+    }
+
 	public void Attack()
 	{
 //		if (HitObj.Count < 3) 
 //		{
-		Spear.GetComponent<BoxCollider>().enabled = true;
-		Animators.GetComponent<Animator> ().Play ("attack");
+    		Spear.GetComponent<BoxCollider>().enabled = true;
+    		Animators.GetComponent<Animator> ().Play ("attack");
 			Invoke ("AttackEnd", 2);
 //		}
 	}

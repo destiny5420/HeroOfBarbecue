@@ -10,10 +10,12 @@ public class SpearCollider : MonoBehaviour {
 	public GameObject[] HitPoint3;
 
     [SerializeField] BoxCollider m_colBox;
+    bool bIsHitTarget;
 
     public void Init()
     {
-        m_colBox.enabled = false;
+        SwitchCollider(false);
+        bIsHitTarget = false;
     }
 
 	void Update()
@@ -69,11 +71,23 @@ public class SpearCollider : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+        if (bIsHitTarget)
+            return;
+
         if (other.transform.tag == "Food")
         {
+            bIsHitTarget = true;
             FruitController obj = other.transform.parent.GetComponent<FruitController>();
 
             Debug.Log("OnTriggerEnter / other name: " + obj.Name);
         }
+    }
+
+    public void SwitchCollider(bool key)
+    {
+        m_colBox.enabled = key;
+
+        if (key == false)
+            bIsHitTarget = false;
     }
 }

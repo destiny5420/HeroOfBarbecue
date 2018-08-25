@@ -538,6 +538,7 @@ GameObject:
   - component: {fileID: 33105650247877672}
   - component: {fileID: 23328666552090578}
   - component: {fileID: 95842969895100240}
+  - component: {fileID: 114369817628643230}
   m_Layer: 0
   m_Name: ghost@move
   m_TagString: Untagged
@@ -3985,6 +3986,18 @@ MonoBehaviour:
   InputStringV: Vertical
   Animators: {fileID: 1367442871472098}
   m_SpearController: {fileID: 114021010993989438}
+--- !u!114 &114369817628643230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1367442871472098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3292a9a563f4b9e98ad46d4916540a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ThirdPersonCharacter: {fileID: 114253399129549306}
 --- !u!136 &136269200789347592
 CapsuleCollider:
   m_ObjectHideFlags: 1

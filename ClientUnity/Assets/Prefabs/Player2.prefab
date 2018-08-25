@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 33509160607752148}
   - component: {fileID: 23589804552441618}
   - component: {fileID: 95919973468632044}
+  - component: {fileID: 114830010195757406}
   m_Layer: 0
   m_Name: ghost@move
   m_TagString: Untagged
@@ -3985,6 +3986,18 @@ MonoBehaviour:
   - {fileID: 1978482438940168}
   - {fileID: 1232387690963630}
   m_colBox: {fileID: 65169031970077978}
+--- !u!114 &114830010195757406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390341222796338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3292a9a563f4b9e98ad46d4916540a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ThirdPersonCharacter: {fileID: 114480888114134574}
 --- !u!136 &136536605006510708
 CapsuleCollider:
   m_ObjectHideFlags: 1
