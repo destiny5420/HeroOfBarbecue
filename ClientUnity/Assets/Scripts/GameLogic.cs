@@ -13,9 +13,11 @@ public class GameLogic : MonoBehaviour
     PlayerMediator m_PlayerMediator;
     SceneLoadMediator m_SceneLoadMediator;
     IOMediator m_IOMediator;
+    UIMediator m_UIMediator;
 
     // Proxy
     PlayerProxy m_PlayerProxy;
+    TimerProxy m_TimeProxy;
 
     void Awake()
     {
@@ -26,8 +28,10 @@ public class GameLogic : MonoBehaviour
         m_PlayerMediator = new PlayerMediator();
         m_SceneLoadMediator = new SceneLoadMediator();
         m_IOMediator = new IOMediator();
+        m_UIMediator = new UIMediator();
 
         m_PlayerProxy = new PlayerProxy();
+        m_TimeProxy = new TimerProxy();
 
         DontDestroyOnLoad(this);
     }
@@ -38,8 +42,10 @@ public class GameLogic : MonoBehaviour
 
         m_PlayerMediator.Start();
         m_IOMediator.Start();
+        m_UIMediator.Start();
 
         m_PlayerProxy.Start();
+        m_TimeProxy.Start();
 
         Init();
     }
@@ -48,8 +54,10 @@ public class GameLogic : MonoBehaviour
     {
         m_PlayerMediator.Init();
         m_IOMediator.Init();
+        m_UIMediator.Init();
 
         m_PlayerProxy.Init();
+        m_TimeProxy.Init();
 
         SceneLoadMediator.Load(SceneLoadMediator.LOAD_SCENE_TYPE.ToMenu);
     }
@@ -57,6 +65,7 @@ public class GameLogic : MonoBehaviour
     void Update()
     {
         m_IOMediator.Update();
+        m_TimeProxy.Update();
     }
 
     #region Proxy & Mediator
@@ -74,13 +83,25 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    public UIMediator UIMediator
+    {
+        get {
+            return m_UIMediator;
+        }
+    }
+
     public PlayerProxy PlayerProxy
     {
-        get
-        {
+        get{
             return m_PlayerProxy;
         }
     }
 
+    public TimerProxy TimerProxy
+    {
+        get{
+            return m_TimeProxy;
+        }
+    }
     #endregion
 }

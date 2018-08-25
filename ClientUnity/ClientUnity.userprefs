@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller/ThirdPersonUserControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller/ThirdPersonCharacter.cs">
     <Files>
-      <File FileName="Assets/Scripts/Controller/ThirdPersonCharacter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controller/ThirdPersonCharacter.cs" Line="63" Column="5" />
       <File FileName="Assets/Scripts/GameLogic.cs" Line="15" Column="15" />
-      <File FileName="Assets/Scripts/Proxy/PlayerProxy.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Mediator/PlayerMediator.cs" Line="45" Column="1" />
-      <File FileName="Assets/Scripts/Controller/ThirdPersonUserControl.cs" Line="49" Column="27" />
-      <File FileName="Assets/Scripts/Mediator/IOMediator.cs" Line="61" Column="59" />
+      <File FileName="Assets/Scripts/Proxy/PlayerProxy.cs" Line="9" Column="6" />
+      <File FileName="Assets/Scripts/Mediator/PlayerMediator.cs" Line="52" Column="26" />
+      <File FileName="Assets/Scripts/Controller/ThirdPersonUserControl.cs" Line="73" Column="28" />
+      <File FileName="Assets/Scripts/Mediator/IOMediator.cs" Line="71" Column="37" />
+      <File FileName="Assets/Common/GameEnum.cs" Line="7" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
