@@ -7,5 +7,7 @@ public class ButtonReplayController : ButtonBaseController
     public override void OnClick()
     {
         Debug.Log("OnClick ButtonReplayController");
+
+        GameLogic.GetInstance().StartGame();
     }
 }
