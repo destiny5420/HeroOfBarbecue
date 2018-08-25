@@ -85,11 +85,13 @@ public class PlayerMediator
     {
         if (playerID == 1)
         {
-            m_clsPlayerController1.UpdateFruiltList();
+            if (m_clsPlayerController1 != null)
+                m_clsPlayerController1.UpdateFruiltList();
         }
         else if (playerID == 2)
         {
-            m_clsPlayerController2.UpdateFruiltList();
+            if (m_clsPlayerController2 != null)
+                m_clsPlayerController2.UpdateFruiltList();
         }
     }
 }

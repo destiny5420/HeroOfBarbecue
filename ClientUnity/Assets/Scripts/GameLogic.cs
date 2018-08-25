@@ -78,15 +78,21 @@ public class GameLogic : MonoBehaviour
         m_TimeProxy.Update();
     }
 
+    public void GameOver()
+    {
+        UIMediator.SetGameBaseTimer(0.0f);
+        UIMediator.GameOver();
+        TimerProxy.Init();
+    }
+
     public void StartGame()
     {
         UIMediator.Init();
         UIMediator.Handle_ReadyPanel();
-
-        PlayerMediator.Init();
-
         WantedProxy.Init();
         PlayerProxy.Init();
+        PlayerMediator.Init();
+        TimerProxy.Handle_GameBase_SpawnFruit();
     }
 
     #region Proxy & Mediator
