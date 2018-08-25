@@ -304,6 +304,14 @@ public class ThirdPersonCharacter : MonoBehaviour
 		{
 			//Get Hit
 		}
-		Debug.Log (collision.transform.name);
+	}
+
+	void OnCollisionStay(Collision collision)
+	{
+		if (collision.transform.name == "Walls" && isDash) 
+		{
+			//Get Hit
+			isDash = false;
+		}
 	}
 }
