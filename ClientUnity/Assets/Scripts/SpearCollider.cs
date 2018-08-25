@@ -9,6 +9,13 @@ public class SpearCollider : MonoBehaviour {
 	public GameObject[] HitPoint2;
 	public GameObject[] HitPoint3;
 
+    [SerializeField] BoxCollider m_colBox;
+
+    public void Init()
+    {
+        m_colBox.enabled = false;
+    }
+
 	void Update()
 	{
 		for (int i = 0; i < 4; i++) 
@@ -50,6 +57,7 @@ public class SpearCollider : MonoBehaviour {
 			}
 		}
 	}
+
 	void OnCollisionEnter(Collision collision)
 	{
 		if (collision.transform.tag == "Food") 
@@ -58,4 +66,14 @@ public class SpearCollider : MonoBehaviour {
 		}
 		Debug.Log (collision.transform.name);
 	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Food")
+        {
+            FruitController obj = other.transform.parent.GetComponent<FruitController>();
+
+            Debug.Log("OnTriggerEnter / other name: " + obj.Name);
+        }
+    }
 }

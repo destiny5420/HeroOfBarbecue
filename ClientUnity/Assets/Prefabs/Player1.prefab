@@ -3877,7 +3877,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560292561451142}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.22, y: 0.14958683, z: 0.69}
@@ -3958,6 +3958,7 @@ MonoBehaviour:
   - {fileID: 1173705474302348}
   - {fileID: 1884496440389934}
   - {fileID: 1221660181403020}
+  m_colBox: {fileID: 65023453496042930}
 --- !u!114 &114253399129549306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3983,6 +3984,7 @@ MonoBehaviour:
   InputStringH: Horizontal
   InputStringV: Vertical
   Animators: {fileID: 1367442871472098}
+  m_SpearController: {fileID: 114021010993989438}
 --- !u!136 &136269200789347592
 CapsuleCollider:
   m_ObjectHideFlags: 1

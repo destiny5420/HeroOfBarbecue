@@ -3953,6 +3953,7 @@ MonoBehaviour:
   InputStringH: Horizontal2
   InputStringV: Vertical2
   Animators: {fileID: 1390341222796338}
+  m_SpearController: {fileID: 114789027040455922}
 --- !u!114 &114789027040455922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3983,6 +3984,7 @@ MonoBehaviour:
   - {fileID: 1058656580278226}
   - {fileID: 1978482438940168}
   - {fileID: 1232387690963630}
+  m_colBox: {fileID: 65169031970077978}
 --- !u!136 &136536605006510708
 CapsuleCollider:
   m_ObjectHideFlags: 1

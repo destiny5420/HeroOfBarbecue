@@ -38,7 +38,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 	public string InputStringV;
 	public GameObject Animators;
 
-
+    [SerializeField] SpearCollider m_SpearController;
 
 	void Start()
 	{
@@ -64,7 +64,14 @@ public class ThirdPersonCharacter : MonoBehaviour
 			m_Cam = Camera.main.transform;
 			Debug.Log ("GetCamera");
 		}
+
+        Init();
 	}
+
+    void Init()
+    {
+        m_SpearController.Init();
+    }
 
 	void Update()
 	{
