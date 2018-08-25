@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SpearCollider.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller/ThirdPersonCharacter.cs">
     <Files>
-      <File FileName="Assets/Scripts/SpearCollider.cs" Line="55" Column="3" />
-      <File FileName="Assets/Scripts/Controller/ThirdPersonCharacter.cs" Line="305" Column="40" />
+      <File FileName="Assets/Scripts/Controller/ThirdPersonCharacter.cs" Line="118" Column="3" />
+      <File FileName="Assets/Scripts/SpearCollider.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GameLogic.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Proxy/PlayerProxy.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Mediator/PlayerMediator.cs" Line="1" Column="1" />
@@ -12,6 +12,7 @@
       <File FileName="Assets/Scripts/Mediator/UIMediator.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Proxy/Obj/PlayerObj.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Controller/PlayerUIController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/HitTest.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

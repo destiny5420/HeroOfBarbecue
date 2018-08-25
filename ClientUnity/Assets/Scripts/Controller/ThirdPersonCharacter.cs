@@ -121,7 +121,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 	{
 //		if (HitObj.Count < 3) 
 //		{
-			Spear.SetActive (true);
+		Spear.GetComponent<BoxCollider>().enabled = true;
 		Animators.GetComponent<Animator> ().Play ("attack");
 			Invoke ("AttackEnd", 2);
 //		}
@@ -129,7 +129,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 	public void AttackEnd ()
 	{
-		Spear.SetActive (false);
+		Spear.GetComponent<BoxCollider>().enabled = false;
 	}
 
 
