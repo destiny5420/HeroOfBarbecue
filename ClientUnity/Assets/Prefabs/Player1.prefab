@@ -1027,6 +1027,7 @@ GameObject:
   - component: {fileID: 33296173119321180}
   - component: {fileID: 64804574013979070}
   - component: {fileID: 23219482560288910}
+  - component: {fileID: 95404748688135480}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -3131,6 +3132,23 @@ Animator:
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95404748688135480
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581567554579390}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d25c0f2fda8ae4cc28bf461a98665b60, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
