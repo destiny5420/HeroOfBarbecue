@@ -35,7 +35,7 @@ public class SceneLoadMediator
             case LOAD_SCENE_TYPE.ToGameBase:
                 {
                     SceneManager.LoadScene("GameBase");
-                    GameLogic.GetInstance().StartGame();
+                    //GameLogic.GetInstance().StartGame();
                 }
                 break;
         }

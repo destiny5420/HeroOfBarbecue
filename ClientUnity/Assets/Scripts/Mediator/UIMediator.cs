@@ -24,9 +24,9 @@ public class UIMediator
 
     public void Regist_PlayerUIController(PlayerUIController controller)
     {
-        Debug.Log("Regist_PlayerUIController");
         m_PlayerUIController = controller;
         m_PlayerUIController.Init();
+        m_PlayerUIController.Handle_Ready();
     }
 
     public void SetGameBaseTimer(float timer)
@@ -34,9 +34,9 @@ public class UIMediator
         m_PlayerUIController.SetTimer(timer);
     }
 
-    public void Hide_PlayerWinnerPanel()
+    public void Handle_ReadyPanel()
     {
-        
+        m_PlayerUIController.Handle_Ready();
     }
 
     public void GameOver()

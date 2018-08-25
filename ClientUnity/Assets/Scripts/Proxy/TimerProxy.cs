@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimerProxy
 {
-    const float m_fDefaultGameBaseTime = 5.0f;
+    const float m_fDefaultGameBaseTime = 60.0f;
     const float m_fGameBaseTimeOfOver = 1.0f;
     bool m_bStart_GameBaseClock;
     float m_fGameBaseClock;

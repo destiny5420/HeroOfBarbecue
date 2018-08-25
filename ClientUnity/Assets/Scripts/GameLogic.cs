@@ -75,7 +75,7 @@ public class GameLogic : MonoBehaviour
     public void StartGame()
     {
         UIMediator.Init();
-        TimerProxy.Handle_GameBaseClock();
+        UIMediator.Handle_ReadyPanel();
     }
 
     #region Proxy & Mediator
