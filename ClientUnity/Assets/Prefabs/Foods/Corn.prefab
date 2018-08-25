@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4179610477028912}
   - component: {fileID: 33250546034363180}
   - component: {fileID: 23190310941640848}
+  - component: {fileID: 54564737190699642}
   m_Layer: 0
   m_Name: Corn
   m_TagString: Untagged
@@ -82,3 +83,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399121978483476}
   m_Mesh: {fileID: 4300000, guid: dc30acedda2f86e48aece23fc5ab2ca4, type: 3}
+--- !u!54 &54564737190699642
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399121978483476}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
