@@ -4,6 +4,8 @@
     Press_Down,
     Press_Left,
     Press_Right,
+	Press_Dash,
+	Press_Attack
 }
 
 public enum UI_TYPE
