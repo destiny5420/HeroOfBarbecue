@@ -11,6 +11,7 @@ public class GameLogic : MonoBehaviour
 
     // Mediator
     PlayerMediator m_PlayerMediator;
+    SceneLoadMediator m_SceneLoadMediator;
 
     // Proxy
     PlayerProxy m_PlayerProxy;
@@ -22,6 +23,7 @@ public class GameLogic : MonoBehaviour
         m_instance = this;
 
         m_PlayerMediator = new PlayerMediator();
+        m_SceneLoadMediator = new SceneLoadMediator();    
 
         m_PlayerProxy = new PlayerProxy();
 
@@ -42,6 +44,8 @@ public class GameLogic : MonoBehaviour
     {
         m_PlayerMediator.Init();
         m_PlayerProxy.Init();
+
+        SceneLoadMediator.Load(SceneLoadMediator.LOAD_SCENE_TYPE.ToMenu);
     }
 
     void Update()
@@ -54,6 +58,13 @@ public class GameLogic : MonoBehaviour
     {
         get {
            return m_PlayerMediator;
+        }
+    }
+
+    public SceneLoadMediator SceneLoadMediator
+    {
+        get {
+            return m_SceneLoadMediator;
         }
     }
 
