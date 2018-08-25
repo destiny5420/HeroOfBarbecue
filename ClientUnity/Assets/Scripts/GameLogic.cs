@@ -14,6 +14,7 @@ public class GameLogic : MonoBehaviour
     SceneLoadMediator m_SceneLoadMediator;
     IOMediator m_IOMediator;
     UIMediator m_UIMediator;
+    GeneratorMediator m_GeneratorMediator;
 
     // Proxy
     PlayerProxy m_PlayerProxy;
@@ -30,6 +31,7 @@ public class GameLogic : MonoBehaviour
         m_SceneLoadMediator = new SceneLoadMediator();
         m_IOMediator = new IOMediator();
         m_UIMediator = new UIMediator();
+        m_GeneratorMediator = new GeneratorMediator();
 
         m_PlayerProxy = new PlayerProxy();
         m_TimeProxy = new TimerProxy();
@@ -45,6 +47,7 @@ public class GameLogic : MonoBehaviour
         m_PlayerMediator.Start();
         m_IOMediator.Start();
         m_UIMediator.Start();
+        m_GeneratorMediator.Start();
 
         m_PlayerProxy.Start();
         m_TimeProxy.Start();
@@ -58,6 +61,7 @@ public class GameLogic : MonoBehaviour
         m_PlayerMediator.Init();
         m_IOMediator.Init();
         m_UIMediator.Init();
+        m_GeneratorMediator.Init();
 
         m_PlayerProxy.Init();
         m_TimeProxy.Init();
@@ -97,6 +101,13 @@ public class GameLogic : MonoBehaviour
     {
         get {
             return m_UIMediator;
+        }
+    }
+
+    public GeneratorMediator GeneratorMediator
+    {
+        get {
+            return m_GeneratorMediator;
         }
     }
 

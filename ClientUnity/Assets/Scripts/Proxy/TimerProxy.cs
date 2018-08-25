@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class TimerProxy
 {
-    const float m_fDefaultGameBaseTime = 5.0f;
+    const float m_fDefaultGameBaseTime = 60.0f;
     const float m_fGameBaseTimeOfOver = 1.0f;
     bool m_bStart_GameBaseClock;
     float m_fGameBaseClock;
+
+    bool bSpawnFruit;
+    const float m_fDefaultSpawnFruitClock = 0.0f;
+    const float m_fSpawnFruitTime = 5.0f;
+    float m_fSpawnFruitClock;
 
     public void Start()
     {
@@ -18,12 +23,21 @@ public class TimerProxy
     {
         m_bStart_GameBaseClock = false;
         m_fGameBaseClock = m_fDefaultGameBaseTime;
+        m_fSpawnFruitClock = m_fDefaultSpawnFruitClock;
+        bSpawnFruit = false;
     }
 
     public void Update()
     {
         if (m_bStart_GameBaseClock)
             GameBaseClock();
+
+        if (bSpawnFruit)
+        {
+            m_fSpawnFruitClock += Time.deltaTime;
+            if (m_fSpawnFruitClock >= m_fSpawnFruitTime)
+                OnSpawnFruitComplete();
+        }
     }
 
     void GameBaseClock()
@@ -55,6 +69,20 @@ public class TimerProxy
     {
         m_fGameBaseClock = m_fDefaultGameBaseTime;
         m_bStart_GameBaseClock = true;
+    }
+
+    public void Handle_GameBase_SpawnFruit()
+    {
+        m_fSpawnFruitClock = m_fDefaultSpawnFruitClock;
+        bSpawnFruit = true;
+    }
+    #endregion
+
+    #region Complete
+    void OnSpawnFruitComplete()
+    {
+        m_fSpawnFruitClock = 0.0f;
+        GameLogic.GetInstance().GeneratorMediator.Spawn_Fruit();
     }
     #endregion
 }

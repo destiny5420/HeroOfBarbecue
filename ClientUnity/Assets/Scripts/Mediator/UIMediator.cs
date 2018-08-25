@@ -27,6 +27,7 @@ public class UIMediator
         m_PlayerUIController = controller;
         m_PlayerUIController.Init();
         m_PlayerUIController.Handle_Ready();
+        GameLogic.GetInstance().TimerProxy.Handle_GameBase_SpawnFruit();
     }
 
     public void SetGameBaseTimer(float timer)

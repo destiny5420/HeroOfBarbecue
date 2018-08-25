@@ -16,17 +16,17 @@ public class FoodGenerator : MonoBehaviour {
 
     public int DropSpeed = 2;
 
-    public 
-
-    // Use this for initialization
-    void Start () {
-
-
-        Initi();
-        
+    void Awake()
+    {
+        GameLogic.GetInstance().GeneratorMediator.Regist_FoodGenerator(this);
     }
 
-    public void Initi(){
+    void Start () 
+    {
+        Init();
+    }
+
+    public void Init(){
 
 
         //消除方法
@@ -87,7 +87,7 @@ public class FoodGenerator : MonoBehaviour {
     //For Timer
     public void GenerateAccordingTime(){
 
-        Initi();
+        Init();
     }
 
 
