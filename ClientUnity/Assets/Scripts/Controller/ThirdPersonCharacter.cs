@@ -302,6 +302,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 		if (collision.transform.tag == "Player" && isDash) 
 		{
 			//Get Hit
+			Debug.Log(collision.transform.name);
 		}
 	}
 

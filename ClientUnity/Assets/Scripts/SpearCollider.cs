@@ -11,19 +11,42 @@ public class SpearCollider : MonoBehaviour {
 
 	void Update()
 	{
-		for (int i = 0; i < 5; i++) 
+		for (int i = 0; i < 4; i++) 
 		{
-			if (HitPoint1 [i].transform.name == HitObj [i]+" (Clone)" && HitObj.Count >0) 
+			if (HitObj.Count > 2) 
 			{
-				HitPoint1 [i].SetActive (true);
+
+				if (HitPoint1 [i].transform.name == HitObj [0]+"(Clone)") 
+				{
+					HitPoint1 [i].SetActive (true);
+				}
+				if (HitPoint2 [i].transform.name == HitObj [1]+"(Clone)") 
+				{
+					HitPoint2 [i].SetActive (true);
+				}
+				if (HitPoint3 [i].transform.name == HitObj [2]+"(Clone)") 
+				{
+					HitPoint3 [i].SetActive (true);
+				}
 			}
-			if (HitPoint2 [i].transform.name == HitObj [i]+" (Clone)" && HitObj.Count >1) 
+			else if (HitObj.Count == 2) 
 			{
-				HitPoint2 [i].SetActive (true);
+
+				if (HitPoint1 [i].transform.name == HitObj [0]+"(Clone)") 
+				{
+					HitPoint1 [i].SetActive (true);
+				}
+				if (HitPoint2 [i].transform.name == HitObj [1]+"(Clone)") 
+				{
+					HitPoint2 [i].SetActive (true);
+				}
 			}
-			if (HitPoint3 [i].transform.name == HitObj [i]+" (Clone)" && HitObj.Count >2) 
+			else if (HitObj.Count == 1) 
 			{
-				HitPoint3 [i].SetActive (true);
+				if (HitPoint1 [i].transform.name == HitObj [0]+"(Clone)") 
+				{
+					HitPoint1 [i].SetActive (true);
+				}
 			}
 		}
 	}
