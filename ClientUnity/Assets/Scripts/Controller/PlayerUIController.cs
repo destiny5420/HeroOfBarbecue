@@ -22,8 +22,8 @@ public class PlayerUIController : MonoBehaviour
         m_txtTimer.text = "";
     }
 
-	void Update () 
+    public void SetTimer(float timer)
     {
-		
-	}
+        m_txtTimer.text = timer.ToString();
+    }
 }
