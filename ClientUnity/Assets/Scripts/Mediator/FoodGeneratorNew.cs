@@ -14,9 +14,15 @@ public class FoodGeneratorNew : MonoBehaviour
 	void Start () 
 	{
 		CreatFruits ();
+		GameLogic.GetInstance ().GeneratorMediator.Regist_FoodGenerator (GetComponent<FoodGeneratorNew> ());
 	}
 
 	void Update () 
+	{
+		
+	}
+
+	public void Init()
 	{
 		
 	}
@@ -27,9 +33,15 @@ public class FoodGeneratorNew : MonoBehaviour
 		{
 			for (int i = 0; i < Random.Range (2, 5); i++) 
 			{
-				GameObject Fruits = Instantiate (FruitKind [Random.Range (0, FruitKind.Length)], new Vector3 (Random.Range (0, 10), 20, Random.Range (0, 10)), transform.rotation, FruitMother);
+				GameObject Fruits = Instantiate (FruitKind [Random.Range (0, FruitKind.Length)], new Vector3 (Random.Range (-10, 10), 20, Random.Range (-10, 10)), transform.rotation, FruitMother);
 				FruitCreated.Add (Fruits);
 			}
 		}
+	}
+
+	public void KillFruit(GameObject Fruit)
+	{
+		FruitCreated.Remove (Fruit);
+		Destroy (Fruit);
 	}
 }

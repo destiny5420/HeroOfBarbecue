@@ -26,8 +26,13 @@ public class GeneratorMediator
         m_FoodGenerator = foodGenerator;
     }
 
-    public void Spawn_Fruit()
+	public void Creat_Fruit ()
+	{
+		m_FoodGenerator.CreatFruits ();
+	}
+
+	public void Kill_Fruit (GameObject Fruit)
     {
-		m_FoodGenerator.CreatFruits();
+		m_FoodGenerator.KillFruit (Fruit);
     }
 }

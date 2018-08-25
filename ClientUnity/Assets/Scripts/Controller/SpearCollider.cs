@@ -6,10 +6,6 @@ public class SpearCollider : MonoBehaviour {
 
     [SerializeField] ThirdPersonCharacter m_ThirdPersonCharacter;
 	public List<string> HitObj;
-	public GameObject[] HitPoint1;
-	public GameObject[] HitPoint2;
-	public GameObject[] HitPoint3;
-
 
     [SerializeField] MeshFilter[] mesFilterFruits;
     [SerializeField] MeshRenderer[] meshRenderers;
@@ -38,44 +34,6 @@ public class SpearCollider : MonoBehaviour {
 
 	void Update()
 	{
-		for (int i = 0; i < 4; i++) 
-		{
-			if (HitObj.Count > 2) 
-			{
-
-				if (HitPoint1 [i].transform.name+"(Clone)" == HitObj [0]) 
-				{
-					HitPoint1 [i].SetActive (true);
-				}
-				if (HitPoint2 [i].transform.name+"(Clone)" == HitObj [1]) 
-				{
-					HitPoint2 [i].SetActive (true);
-				}
-				if (HitPoint3 [i].transform.name+"(Clone)" == HitObj [2]) 
-				{
-					HitPoint3 [i].SetActive (true);
-				}
-			}
-			else if (HitObj.Count == 2) 
-			{
-
-				if (HitPoint1 [i].transform.name+"(Clone)" == HitObj [0]) 
-				{
-					HitPoint1 [i].SetActive (true);
-				}
-				if (HitPoint2 [i].transform.name+"(Clone)" == HitObj [1]) 
-				{
-					HitPoint2 [i].SetActive (true);
-				}
-			}
-			else if (HitObj.Count == 1) 
-			{
-				if (HitPoint1 [i].transform.name+"(Clone)" == HitObj [0]) 
-				{
-					HitPoint1 [i].SetActive (true);
-				}
-			}
-		}
 	}
 
 	void OnCollisionEnter(Collision collision)
@@ -97,9 +55,10 @@ public class SpearCollider : MonoBehaviour {
             bIsHitTarget = true;
             FruitController obj = other.transform.parent.GetComponent<FruitController>();
 
-            GameLogic.GetInstance().PlayerProxy.IncreaseFoodList(m_ThirdPersonCharacter.PlayerID, obj.Name);
+			GameLogic.GetInstance().PlayerProxy.IncreaseFoodList(m_ThirdPersonCharacter.PlayerID, obj.Name);
 			GetComponent<AudioSource> ().PlayOneShot (HitSound);
 
+			GameLogic.GetInstance ().GeneratorMediator.Kill_Fruit (other.transform.parent.gameObject);
             Debug.Log("OnTriggerEnter / other name: " + obj.Name);
 
         }

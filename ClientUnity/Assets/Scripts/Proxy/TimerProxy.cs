@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimerProxy
 {
-    const float m_fDefaultGameBaseTime = 10.0f;
+    const float m_fDefaultGameBaseTime = 60.0f;
     const float m_fGameBaseTimeOfOver = 1.0f;
     bool m_bStart_GameBaseClock;
     float m_fGameBaseClock;
@@ -82,7 +82,7 @@ public class TimerProxy
     void OnSpawnFruitComplete()
     {
         m_fSpawnFruitClock = 0.0f;
-        GameLogic.GetInstance().GeneratorMediator.Spawn_Fruit();
+		GameLogic.GetInstance().GeneratorMediator.Creat_Fruit();
     }
     #endregion
 }

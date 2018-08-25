@@ -1746,7 +1746,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1339311330850378}
   m_LocalRotation: {x: 0.686982, y: -0, z: -0, w: 0.7266745}
-  m_LocalPosition: {x: 0, y: 0.1, z: 3.6}
+  m_LocalPosition: {x: 0, y: 0.1, z: 3.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4613204650732990}
@@ -3337,7 +3337,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
-  DashSpeed: 3
+  DashSpeed: 10
   Spear: {fileID: 1715179215621982}
   InputStringH: Horizontal2
   InputStringV: Vertical2
@@ -3362,24 +3362,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThirdPersonCharacter: {fileID: 114480888114134574}
   HitObj: []
-  HitPoint1:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  HitPoint2:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  HitPoint3:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   mesFilterFruits:
   - {fileID: 33327271238956198}
   - {fileID: 33125856350688254}
