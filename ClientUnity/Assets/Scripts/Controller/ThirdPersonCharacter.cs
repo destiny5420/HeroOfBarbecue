@@ -34,7 +34,6 @@ public class ThirdPersonCharacter : MonoBehaviour
 	private bool isDash;
 	public GameObject Spear;
 	Transform m_Cam;
-	List<string> HitObj;
 	public string InputStringH;
 	public string InputStringV;
 
