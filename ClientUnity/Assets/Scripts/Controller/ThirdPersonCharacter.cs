@@ -71,6 +71,7 @@ public class ThirdPersonCharacter : MonoBehaviour
     void Init()
     {
         m_SpearController.Init();
+        UpdateFruiltList();
     }
 
 	void Update()
@@ -140,15 +141,15 @@ public class ThirdPersonCharacter : MonoBehaviour
 	{
 //		if (HitObj.Count < 3) 
 //		{
-    		Spear.GetComponent<BoxCollider>().enabled = true;
+    		//Spear.GetComponent<BoxCollider>().enabled = true;
     		Animators.GetComponent<Animator> ().Play ("attack");
-			Invoke ("AttackEnd", 2);
+			//Invoke ("AttackEnd", 2);
 //		}
 	}
 
 	public void AttackEnd ()
 	{
-		Spear.GetComponent<BoxCollider>().enabled = false;
+		//Spear.GetComponent<BoxCollider>().enabled = false;
 	}
 
 
@@ -335,4 +336,12 @@ public class ThirdPersonCharacter : MonoBehaviour
 			isDash = false;
 		}
 	}
+
+    public void UpdateFruiltList()
+    {
+        Debug.LogWarning("FruiltList / Player ID: " + PlayerID + 1);
+        string[] sAryFruitName = GameLogic.GetInstance().PlayerProxy.GetPlayFruitListName(PlayerID + 1);
+
+        m_SpearController.DisplayFruilt(sAryFruitName);
+    }
 }

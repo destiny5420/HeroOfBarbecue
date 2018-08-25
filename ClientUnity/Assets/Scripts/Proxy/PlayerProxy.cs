@@ -32,4 +32,16 @@ public class PlayerProxy
 	{
 		
 	}
+
+    public void IncreaseFoodList(int playerID, string fruitName)
+    {
+        m_dicPlayerObj[playerID].AddFruit(fruitName);
+        GameLogic.GetInstance().PlayerMediator.UpdatePlayerFruiltList(playerID);
+
+    }
+
+    public string[] GetPlayFruitListName(int playerID)
+    {
+        return m_dicPlayerObj[playerID].arrayListName;
+    }
 }

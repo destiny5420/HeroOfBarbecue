@@ -7,13 +7,41 @@ public class PlayerObj
     int iHp;
     int iStr;
     float fSpeed;
-	List<string> HitName;
+    string[] sAryFruitList;
 
     public PlayerObj()
     {
         iHp = 100;
         iStr = 10;
         fSpeed = 10;
+
+        CreateHitNameData();
     }
 
+    void CreateHitNameData()
+    {
+        sAryFruitList = new string[3];
+
+        for (int i = 0; i < sAryFruitList.Length; i++)
+            sAryFruitList[i] = "";
+    }
+
+    public void AddFruit(string fruitName)
+    {
+        for (int i = 0; i < sAryFruitList.Length; i++)
+        {
+            if (sAryFruitList[i] == "")
+            {
+                sAryFruitList[i] = fruitName;
+                break;
+            }
+        }
+    }
+
+    public string[] arrayListName
+    {
+        get {
+            return sAryFruitList;
+        }
+    }
 }

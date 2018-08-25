@@ -68,4 +68,16 @@ public class PlayerMediator
 //			m_clsPlayerController1.DoMove ("Horizontal2","Vertical2");
 //		}
     }
+
+    public void UpdatePlayerFruiltList(int playerID)
+    {
+        if (playerID == 1)
+        {
+            m_clsPlayerController1.UpdateFruiltList();
+        }
+        else if (playerID == 2)
+        {
+            m_clsPlayerController2.UpdateFruiltList();
+        }
+    }
 }

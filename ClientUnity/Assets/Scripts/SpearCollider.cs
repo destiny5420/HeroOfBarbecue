@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class SpearCollider : MonoBehaviour {
 
+    [SerializeField] ThirdPersonCharacter m_ThirdPersonCharacter;
 	public List<string> HitObj;
 	public GameObject[] HitPoint1;
 	public GameObject[] HitPoint2;
 	public GameObject[] HitPoint3;
 
+
+    [SerializeField] MeshFilter[] mesFilterFruits;
+
+    [SerializeField] Mesh mesCorn;
+    [SerializeField] Mesh meshFish;
+    [SerializeField] Mesh mesGreenPepper;
+    [SerializeField] Mesh mesMeat;
+    [SerializeField] Mesh mesMushroom;
     [SerializeField] BoxCollider m_colBox;
     bool bIsHitTarget;
 
@@ -79,6 +88,8 @@ public class SpearCollider : MonoBehaviour {
             bIsHitTarget = true;
             FruitController obj = other.transform.parent.GetComponent<FruitController>();
 
+            GameLogic.GetInstance().PlayerProxy.IncreaseFoodList(m_ThirdPersonCharacter.PlayerID + 1, obj.Name);
+
             Debug.Log("OnTriggerEnter / other name: " + obj.Name);
         }
     }
@@ -89,5 +100,41 @@ public class SpearCollider : MonoBehaviour {
 
         if (key == false)
             bIsHitTarget = false;
+    }
+
+    public void DisplayFruilt(string[] fruitName)
+    {
+        Debug.LogWarning("SpearCollider / DisplayFruilt / fruitName length: " + fruitName.Length + " / mesFilterFruits length: " + mesFilterFruits.Length);
+
+        for (int i = 0; i < fruitName.Length; i++)
+        {
+            if (fruitName[i] == "")
+            {
+                mesFilterFruits[i].gameObject.SetActive(false);
+                continue;
+            }
+
+            Mesh tmpMesh = GetMesh(fruitName[i]);
+            mesFilterFruits[i].mesh = tmpMesh;
+        }
+    }
+
+    Mesh GetMesh(string fruitName)
+    {
+        switch (fruitName)
+        {
+            case "Corn":
+                return mesCorn;
+            case "Fish":
+                return meshFish;
+            case "GreenPepper":
+                return mesGreenPepper;
+            case "Meat":
+                return mesMeat;
+            case "Mushroom":
+                return mesMushroom;
+            default:
+                return null;
+        }
     }
 }
