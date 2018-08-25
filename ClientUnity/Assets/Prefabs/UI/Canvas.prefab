@@ -629,6 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_txtTimer: {fileID: 114086163396780326}
+  m_rectTranWinnerPanel: {fileID: 224956774232500790}
 --- !u!222 &222258394103137436
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1005,7 +1006,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!224 &224964947077029708
 RectTransform:
   m_ObjectHideFlags: 1
