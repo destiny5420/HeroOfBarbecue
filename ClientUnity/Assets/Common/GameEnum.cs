@@ -5,3 +5,8 @@
     Press_Left,
     Press_Right,
 }
+
+public enum UI_TYPE
+{
+    PlayerUIController = 0,
+}
