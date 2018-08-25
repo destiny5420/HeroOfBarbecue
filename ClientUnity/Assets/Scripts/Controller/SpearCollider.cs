@@ -112,12 +112,12 @@ public class SpearCollider : MonoBehaviour {
 
     public void DisplayFruilt(string[] fruitName)
     {
-        Debug.LogWarning("SpearCollider / DisplayFruilt / fruitName length: " + fruitName.Length + " / mesFilterFruits length: " + mesFilterFruits.Length);
+        //Debug.LogWarning("SpearCollider / DisplayFruilt / fruitName length: " + fruitName.Length + " / mesFilterFruits length: " + mesFilterFruits.Length);
 
-        for (int i = 0; i < fruitName.Length; i++)
-        {
-            Debug.Log("["+i+"] fruitName : " + fruitName[i]);
-        }
+        //for (int i = 0; i < fruitName.Length; i++)
+        //{
+        //    Debug.Log("["+i+"] fruitName : " + fruitName[i]);
+        //}
 
         for (int i = 0; i < fruitName.Length; i++)
         {

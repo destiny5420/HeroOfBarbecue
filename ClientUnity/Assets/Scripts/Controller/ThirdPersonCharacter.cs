@@ -146,7 +146,41 @@ public class ThirdPersonCharacter : MonoBehaviour
     public void Eat()
     {
         Debug.Log("Eat / PlayerID: " + PlayerID + 1);
+
+        if (SuccessGetScore())
+        {
+            Debug.LogError("SuccessGetScore");
+            GameLogic.GetInstance().WantedProxy.CreateNewList(PlayerID + 1);
+        }
+
         GameLogic.GetInstance().PlayerProxy.CleanFoodList(PlayerID + 1);
+    }
+
+    bool SuccessGetScore()
+    {
+        string[] tmpAryListName = GameLogic.GetInstance().PlayerProxy.GetPlayFruitListName(PlayerID + 1);
+        string[] tmpAryListQuetion = GameLogic.GetInstance().WantedProxy.GetQuestionForPlayer(PlayerID + 1);
+        int iDataLength = tmpAryListName.Length;
+
+        for (int i = 0; i < tmpAryListName.Length; i++)
+            Debug.Log("AryListName ["+i+"]: " + tmpAryListName[i]);
+
+        for (int i = 0; i < tmpAryListQuetion.Length; i++)
+            Debug.Log("tmpAryListQuetion [" + i + "]: " + tmpAryListQuetion[i]);
+
+        if (tmpAryListName.Length != tmpAryListQuetion.Length)
+        {
+            Debug.LogError("Question length not equal to Fruit list count!!!");
+            return false;
+        }
+
+        for (int i = 0; i < iDataLength; i++)
+        {
+            if (tmpAryListName[i] != tmpAryListQuetion[i])
+                return false;
+        }
+
+        return true;
     }
 
     public void AttackComplete ()

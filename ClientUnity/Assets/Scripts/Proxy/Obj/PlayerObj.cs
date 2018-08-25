@@ -20,10 +20,10 @@ public class PlayerObj
         fSpeed = 10;
         bBeAttack = false;
         bAttacking = false;
-        CreateHitNameData();
+        CreateFruitListData();
     }
 
-    void CreateHitNameData()
+    void CreateFruitListData()
     {
         sAryFruitList = new string[3];
 

@@ -12,9 +12,6 @@ public class TestSctipt : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyDown (KeyCode.A)) 
-		{
-			GameLogic.GetInstance ().WantedProxy.Player1CreatNewList ();
-		}
+
 	}
 }
