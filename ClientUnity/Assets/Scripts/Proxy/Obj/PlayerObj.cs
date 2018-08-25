@@ -7,6 +7,7 @@ public class PlayerObj
     int iHp;
     int iStr;
     float fSpeed;
+	List<string> HitName;
 
     public PlayerObj()
     {

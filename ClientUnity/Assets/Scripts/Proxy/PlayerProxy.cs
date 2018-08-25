@@ -9,6 +9,7 @@ public class PlayerProxy
     public void Start () 
     {
         m_dicPlayerObj = new Dictionary<int, PlayerObj>();
+		CreatePlayerData ();
 	}
 	
     public void Init()
@@ -21,4 +22,14 @@ public class PlayerProxy
         m_dicPlayerObj.Add(1, new PlayerObj());
         m_dicPlayerObj.Add(2, new PlayerObj());
     }
+
+	void HitObject()
+	{
+		
+	}
+
+	public  void DetectObject(int id)
+	{
+		
+	}
 }
