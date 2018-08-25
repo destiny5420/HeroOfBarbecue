@@ -13,7 +13,8 @@ public class UIMediator
 
     public void Init()
     {
-        
+        if (m_PlayerUIController != null)
+            m_PlayerUIController.Init();
     }
 	
 	public void Update () 
@@ -32,4 +33,17 @@ public class UIMediator
     {
         m_PlayerUIController.SetTimer(timer);
     }
+<<<<<<< HEAD
+=======
+
+    public void Hide_PlayerWinnerPanel()
+    {
+        
+    }
+
+    public void GameOver()
+    {
+        m_PlayerUIController.GameOver();
+    }
+>>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
 }

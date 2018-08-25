@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
 
 public class ThirdPersonCharacter : MonoBehaviour
@@ -26,6 +27,16 @@ public class ThirdPersonCharacter : MonoBehaviour
 	Vector3 m_CapsuleCenter;
 	CapsuleCollider m_Capsule;
 	bool m_Crouching;
+	public float DashSpeed;
+	private Vector3 DashTarget;
+	private Vector3 m_CamForward;
+	private Vector3 m_Move;
+	private bool isDash;
+	public GameObject Spear;
+	Transform m_Cam;
+	List<string> HitObj;
+	public string InputStringH;
+	public string InputStringV;
 
 
 
@@ -46,6 +57,24 @@ public class ThirdPersonCharacter : MonoBehaviour
 		else
 		{
 			GameLogic.GetInstance ().PlayerMediator.RegistPlayerController2 (GetComponent<ThirdPersonCharacter>());
+		}
+
+		if (Camera.main != null)
+		{
+			m_Cam = Camera.main.transform;
+			Debug.Log ("GetCamera");
+		}
+	}
+
+	void Update()
+	{
+		if (isDash) 
+		{
+			transform.position = Vector3.Lerp (transform.position, DashTarget, Time.deltaTime * 5);
+			if (Vector3.Distance (transform.position, DashTarget) < 1f) 
+			{
+				isDash = false;
+			}
 		}
 	}
 
@@ -80,6 +109,26 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 		// send input and other state parameters to the animator
 		UpdateAnimator(move);
+	}
+
+	public void Dash()
+	{
+		DashTarget = transform.position + transform.forward * DashSpeed;
+		isDash = true;
+	}
+
+	public void Attack()
+	{
+//		if (HitObj.Count < 3) 
+//		{
+			Spear.SetActive (true);
+			Invoke ("AttackEnd", 2);
+//		}
+	}
+
+	public void AttackEnd ()
+	{
+		Spear.SetActive (false);
 	}
 
 
@@ -227,5 +276,34 @@ public class ThirdPersonCharacter : MonoBehaviour
 			m_GroundNormal = Vector3.up;
 			m_Animator.applyRootMotion = false;
 		}
+	}
+	private void FixedUpdate()
+	{
+		// read inputs
+		float h = CrossPlatformInputManager.GetAxis(InputStringH);
+		float v = CrossPlatformInputManager.GetAxis(InputStringV);
+
+		// calculate move direction to pass to character
+		if (m_Cam != null)
+		{
+			// calculate camera relative direction to move:
+			m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
+			m_Move = v*m_CamForward + h*m_Cam.right;
+		}
+		else
+		{
+			m_Move = v*Vector3.forward + h*Vector3.right;
+		}
+		Move(m_Move, false, false);
+	}
+
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.transform.tag == "Player" && isDash) 
+		{
+			//Get Hit
+		}
+		Debug.Log (collision.transform.name);
 	}
 }

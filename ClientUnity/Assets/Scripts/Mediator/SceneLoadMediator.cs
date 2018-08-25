@@ -35,7 +35,11 @@ public class SceneLoadMediator
             case LOAD_SCENE_TYPE.ToGameBase:
                 {
                     SceneManager.LoadScene("GameBase");
+<<<<<<< HEAD
                     GameLogic.GetInstance().TimerProxy.Handle_GameBaseClock();
+=======
+                    GameLogic.GetInstance().StartGame();
+>>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
                 }
                 break;
         }

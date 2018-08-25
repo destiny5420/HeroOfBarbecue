@@ -18,6 +18,10 @@ public class GameLogic : MonoBehaviour
     // Proxy
     PlayerProxy m_PlayerProxy;
     TimerProxy m_TimeProxy;
+<<<<<<< HEAD
+=======
+    GameProxy m_GameProxy;
+>>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
 
     void Awake()
     {
@@ -32,6 +36,10 @@ public class GameLogic : MonoBehaviour
 
         m_PlayerProxy = new PlayerProxy();
         m_TimeProxy = new TimerProxy();
+<<<<<<< HEAD
+=======
+        m_GameProxy = new GameProxy();
+>>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
 
         DontDestroyOnLoad(this);
     }
@@ -46,6 +54,10 @@ public class GameLogic : MonoBehaviour
 
         m_PlayerProxy.Start();
         m_TimeProxy.Start();
+<<<<<<< HEAD
+=======
+        m_GameProxy.Start();
+>>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
 
         Init();
     }
@@ -58,6 +70,10 @@ public class GameLogic : MonoBehaviour
 
         m_PlayerProxy.Init();
         m_TimeProxy.Init();
+<<<<<<< HEAD
+=======
+        m_GameProxy.Init();
+>>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
 
         SceneLoadMediator.Load(SceneLoadMediator.LOAD_SCENE_TYPE.ToMenu);
     }
@@ -66,6 +82,12 @@ public class GameLogic : MonoBehaviour
     {
         m_IOMediator.Update();
         m_TimeProxy.Update();
+    }
+
+    public void StartGame()
+    {
+        UIMediator.Init();
+        TimerProxy.Handle_GameBaseClock();
     }
 
     #region Proxy & Mediator
@@ -103,5 +125,15 @@ public class GameLogic : MonoBehaviour
             return m_TimeProxy;
         }
     }
+<<<<<<< HEAD
+=======
+
+    public GameProxy GameProxy
+    {
+        get{
+            return m_GameProxy;
+        }
+    }
+>>>>>>> f65abe9e5d07af47e8ae67f60447c27ad5c03a03
     #endregion
 }
