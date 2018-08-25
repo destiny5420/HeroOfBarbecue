@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class ThirdPersonCharacter : MonoBehaviour
 {
-	public int  PlayerID;
+	public int PlayerID;
+
+    Vector3 v3InitPos_01 = new Vector3(-12.0f, 0.0f, -15.0f);
+    Vector3 v3InitPos_02 = new Vector3(12.0f, 0.0f, 5.0f);
+
 	[SerializeField] float m_MovingTurnSpeed = 360;
 	[SerializeField] float m_StationaryTurnSpeed = 180;
 	[SerializeField] float m_JumpPower = 12f;
@@ -50,14 +54,11 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 		m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		m_OrigGroundCheckDistance = m_GroundCheckDistance;
-		if (PlayerID == 0) 
-		{
-			GameLogic.GetInstance ().PlayerMediator.RegistPlayerController1 (GetComponent<ThirdPersonCharacter>());
-		}
-		else
-		{
+
+        if (PlayerID == 1)
+            GameLogic.GetInstance().PlayerMediator.RegistPlayerController1(GetComponent<ThirdPersonCharacter>());
+        else if (PlayerID == 2)
 			GameLogic.GetInstance ().PlayerMediator.RegistPlayerController2 (GetComponent<ThirdPersonCharacter>());
-		}
 
 		if (Camera.main != null)
 		{
@@ -68,10 +69,12 @@ public class ThirdPersonCharacter : MonoBehaviour
         Init();
 	}
 
-    void Init()
+    public void Init()
     {
         m_SpearController.Init();
         UpdateFruiltList();
+
+        transform.position = PlayerID == 1 ? v3InitPos_01 : v3InitPos_02;
     }
 
 	void Update()
@@ -139,27 +142,27 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 	public void Attack()
 	{
-        GameLogic.GetInstance().PlayerProxy.SwitchState_Attack(PlayerID + 1, true);
+        GameLogic.GetInstance().PlayerProxy.SwitchState_Attack(PlayerID, true);
 		Animators.GetComponent<Animator> ().Play("attack");
 	}
 
     public void Eat()
     {
-        Debug.Log("Eat / PlayerID: " + PlayerID + 1);
+        Debug.Log("Eat / PlayerID: " + PlayerID);
 
         if (SuccessGetScore())
         {
             Debug.LogError("SuccessGetScore");
-            GameLogic.GetInstance().WantedProxy.CreateNewList(PlayerID + 1);
+            GameLogic.GetInstance().WantedProxy.CreateNewList(PlayerID);
         }
 
-        GameLogic.GetInstance().PlayerProxy.CleanFoodList(PlayerID + 1);
+        GameLogic.GetInstance().PlayerProxy.CleanFoodList(PlayerID);
     }
 
     bool SuccessGetScore()
     {
-        string[] tmpAryListName = GameLogic.GetInstance().PlayerProxy.GetPlayFruitListName(PlayerID + 1);
-        string[] tmpAryListQuetion = GameLogic.GetInstance().WantedProxy.GetQuestionForPlayer(PlayerID + 1);
+        string[] tmpAryListName = GameLogic.GetInstance().PlayerProxy.GetPlayFruitListName(PlayerID);
+        string[] tmpAryListQuetion = GameLogic.GetInstance().WantedProxy.GetQuestionForPlayer(PlayerID);
         int iDataLength = tmpAryListName.Length;
 
         for (int i = 0; i < tmpAryListName.Length; i++)
@@ -185,7 +188,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 
     public void AttackComplete ()
 	{
-        GameLogic.GetInstance().PlayerProxy.SwitchState_Attack(PlayerID + 1, false);
+        GameLogic.GetInstance().PlayerProxy.SwitchState_Attack(PlayerID, false);
 	}
 
 	void ScaleCapsuleForCrouching(bool crouch)
@@ -374,8 +377,8 @@ public class ThirdPersonCharacter : MonoBehaviour
 
     public void UpdateFruiltList()
     {
-        Debug.LogWarning("FruiltList / Player ID: " + PlayerID + 1);
-        string[] sAryFruitName = GameLogic.GetInstance().PlayerProxy.GetPlayFruitListName(PlayerID + 1);
+        Debug.LogWarning("FruiltList / Player ID: " + (PlayerID));
+        string[] sAryFruitName = GameLogic.GetInstance().PlayerProxy.GetPlayFruitListName(PlayerID);
 
         m_SpearController.DisplayFruilt(sAryFruitName);
     }

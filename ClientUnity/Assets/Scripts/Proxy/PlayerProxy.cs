@@ -10,11 +10,15 @@ public class PlayerProxy
     {
         m_dicPlayerObj = new Dictionary<int, PlayerObj>();
 		CreatePlayerData ();
+        Init();
 	}
 	
     public void Init()
     {
-
+        foreach (var item in m_dicPlayerObj)
+        {
+            item.Value.Init();
+        }
     }
 
     void CreatePlayerData()

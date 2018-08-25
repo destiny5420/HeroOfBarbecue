@@ -82,6 +82,11 @@ public class GameLogic : MonoBehaviour
     {
         UIMediator.Init();
         UIMediator.Handle_ReadyPanel();
+
+        PlayerMediator.Init();
+
+        WantedProxy.Init();
+        PlayerProxy.Init();
     }
 
     #region Proxy & Mediator

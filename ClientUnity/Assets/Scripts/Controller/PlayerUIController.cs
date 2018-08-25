@@ -158,7 +158,6 @@ public class PlayerUIController : MonoBehaviour
 
         if (m_bStartGame)
         {
-            Debug.Log("Go");
             m_bDelayHideGo = true;
         }
         else

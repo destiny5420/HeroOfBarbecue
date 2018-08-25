@@ -96,7 +96,7 @@ public class SpearCollider : MonoBehaviour {
             bIsHitTarget = true;
             FruitController obj = other.transform.parent.GetComponent<FruitController>();
 
-            GameLogic.GetInstance().PlayerProxy.IncreaseFoodList(m_ThirdPersonCharacter.PlayerID + 1, obj.Name);
+            GameLogic.GetInstance().PlayerProxy.IncreaseFoodList(m_ThirdPersonCharacter.PlayerID, obj.Name);
 
             Debug.Log("OnTriggerEnter / other name: " + obj.Name);
         }

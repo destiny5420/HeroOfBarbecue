@@ -15,7 +15,11 @@ public class PlayerMediator
 	
     public void Init()
     {
+        if (m_clsPlayerController1 != null)
+            m_clsPlayerController1.Init();
 
+        if (m_clsPlayerController2 != null)
+            m_clsPlayerController2.Init();
     }
 
 	void Update () 

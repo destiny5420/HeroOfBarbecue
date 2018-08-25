@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerObj 
 {
-    int iHp;
-    int iStr;
     float fSpeed;
     string[] sAryFruitList;
 
@@ -15,17 +13,15 @@ public class PlayerObj
 
     public PlayerObj()
     {
-        iHp = 100;
-        iStr = 10;
-        fSpeed = 10;
-        bBeAttack = false;
-        bAttacking = false;
-        CreateFruitListData();
+        sAryFruitList = new string[3];
+
+        Init();
     }
 
-    void CreateFruitListData()
+    public void Init()
     {
-        sAryFruitList = new string[3];
+        bBeAttack = false;
+        bAttacking = false;
 
         for (int i = 0; i < sAryFruitList.Length; i++)
             sAryFruitList[i] = "";
