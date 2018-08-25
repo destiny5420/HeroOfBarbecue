@@ -19,7 +19,7 @@ public class FoodGenerator : MonoBehaviour {
 
     void Awake()
     {
-        GameLogic.GetInstance().GeneratorMediator.Regist_FoodGenerator(this);
+//        GameLogic.GetInstance().GeneratorMediator.Regist_FoodGenerator(this);
     }
 
     void Start () 
