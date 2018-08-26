@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerObj 
 {
     float fSpeed;
+    long lScore;
     string[] sAryFruitList;
 
     // State
@@ -20,6 +21,8 @@ public class PlayerObj
 
     public void Init()
     {
+        fSpeed = 0.0f;
+        lScore = 0;
         bBeAttack = false;
         bAttacking = false;
 
@@ -38,6 +41,11 @@ public class PlayerObj
                 break;
             }
         }
+    }
+
+    public void InscreaseScore()
+    {
+        lScore += 10;
     }
 
 	public void DropFruit(int playerID)
@@ -92,6 +100,13 @@ public class PlayerObj
     {
         get {
             return bBeAttack;
+        }
+    }
+
+    public long score
+    {
+        get {
+            return lScore;
         }
     }
 

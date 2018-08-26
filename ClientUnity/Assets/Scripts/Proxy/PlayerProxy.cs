@@ -41,7 +41,12 @@ public class PlayerProxy
     {
         m_dicPlayerObj[playerID].AddFruit(fruitName);
         GameLogic.GetInstance().PlayerMediator.UpdatePlayerFruiltList(playerID);
+    }
 
+    public void IncreaseScore(int playerID)
+    {
+        m_dicPlayerObj[playerID].InscreaseScore();
+        GameLogic.GetInstance().UIMediator.UpdatePlayerScore();
     }
 
 	public void DropFood(int playerID)
@@ -78,5 +83,10 @@ public class PlayerProxy
             return false;
 
         return true;
+    }
+
+    public long GetScore(int playerID)
+    {
+        return m_dicPlayerObj[playerID].score;
     }
 }
