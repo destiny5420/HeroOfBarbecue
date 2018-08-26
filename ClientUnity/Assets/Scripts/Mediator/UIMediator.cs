@@ -49,4 +49,10 @@ public class UIMediator
     {
         m_PlayerUIController.UpdateScore();
     }
+
+    public void UpdateWantList()
+    {
+        if (m_PlayerUIController != null)
+            m_PlayerUIController.UpdateWantList();
+    }
 }

@@ -14,6 +14,15 @@ public class PlayerUIController : MonoBehaviour
     [SerializeField] Transform m_tranShiny;
     [SerializeField] Transform m_tranMessage;
 
+    [SerializeField] Image[] m_imgPlayer1_Wants;
+    [SerializeField] Image[] m_imgPlayer2_Wants;
+
+    [SerializeField] Sprite m_spriteCorn;
+    [SerializeField] Sprite m_spriteFish;
+    [SerializeField] Sprite m_spriteGreenPepper;
+    [SerializeField] Sprite m_spriteMeat;
+    [SerializeField] Sprite m_spriteMushroom;
+
     Vector3 m_v3WinnerPanelHidePos = new Vector3(0.0f, 2000.0f, 0.0f);
     Vector3 m_v3WinnerPanelShowPos = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -51,7 +60,7 @@ public class PlayerUIController : MonoBehaviour
 
     void Start()
     {
-
+        UpdateWantList();
     }
 
     void Update()
@@ -110,6 +119,7 @@ public class PlayerUIController : MonoBehaviour
         m_fDelayHideGoTimeClock = m_fDefaultDelayGoTime;
 
         UpdateScore();
+        UpdateWantList();
     }
 
     public void SetTimer(float timer)
@@ -162,6 +172,37 @@ public class PlayerUIController : MonoBehaviour
 
         m_txtPlayer1_Score.text = lScorePlayer1.ToString();
         m_txtPlayer2_Score.text = lScorePlayer2.ToString();
+    }
+
+    public void UpdateWantList()
+    {
+        string[] sAryWantList_1 = GameLogic.GetInstance().WantedProxy.GetQuestionForPlayer(1);
+        string[] sAryWantList_2 = GameLogic.GetInstance().WantedProxy.GetQuestionForPlayer(2);
+
+        for (int i = 0; i < sAryWantList_1.Length; i++)
+            m_imgPlayer1_Wants[i].sprite = GetSprite(sAryWantList_1[i]);
+        
+        for (int i = 0; i < sAryWantList_2.Length; i++)
+            m_imgPlayer2_Wants[i].sprite = GetSprite(sAryWantList_2[i]);
+    }
+
+    Sprite GetSprite(string spriteName)
+    {
+        switch (spriteName)
+        {
+            case "Corn":
+                return m_spriteCorn;
+            case "Fish":
+                return m_spriteFish;
+            case "GreenPepper":
+                return m_spriteGreenPepper;
+            case "Meat":
+                return m_spriteMeat;
+            case "Mushroom":
+                return m_spriteMushroom;
+            default:
+                return null;
+        }
     }
 
     #region Complete

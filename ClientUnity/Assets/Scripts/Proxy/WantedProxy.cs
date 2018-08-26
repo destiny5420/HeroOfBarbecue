@@ -37,6 +37,8 @@ public class WantedProxy {
                 Player2CreatNewList();
                 break;
         }
+
+        GameLogic.GetInstance().UIMediator.UpdateWantList();
     }
 
 	void Player1CreatNewList()
