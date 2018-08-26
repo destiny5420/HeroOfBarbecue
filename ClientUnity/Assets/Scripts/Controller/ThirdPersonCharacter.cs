@@ -71,7 +71,6 @@ public class ThirdPersonCharacter : MonoBehaviour
 		if (Camera.main != null)
 		{
 			m_Cam = Camera.main.transform;
-			Debug.Log ("GetCamera");
 		}
 
         Init();
@@ -142,13 +141,11 @@ public class ThirdPersonCharacter : MonoBehaviour
 
     public void WeaponCollider_Open()
     {
-        Debug.LogWarning("WeaponCollider_Open");
         m_SpearController.SwitchCollider(true);
     }
 
     public void WeaponCollider_Close()
     {
-        Debug.LogWarning("WeaponCollider_Close");
         m_SpearController.SwitchCollider(false);
     }
 
@@ -161,8 +158,6 @@ public class ThirdPersonCharacter : MonoBehaviour
 
     public void Eat()
     {
-        Debug.Log("Eat / PlayerID: " + PlayerID);
-
         if (SuccessGetScore())
         {
             Debug.LogError("SuccessGetScore");
@@ -182,12 +177,6 @@ public class ThirdPersonCharacter : MonoBehaviour
         string[] tmpAryListName = GameLogic.GetInstance().PlayerProxy.GetPlayFruitListName(PlayerID);
         string[] tmpAryListQuetion = GameLogic.GetInstance().WantedProxy.GetQuestionForPlayer(PlayerID);
         int iDataLength = tmpAryListName.Length;
-
-        for (int i = 0; i < tmpAryListName.Length; i++)
-            Debug.Log("AryListName ["+i+"]: " + tmpAryListName[i]);
-
-        for (int i = 0; i < tmpAryListQuetion.Length; i++)
-            Debug.Log("tmpAryListQuetion [" + i + "]: " + tmpAryListQuetion[i]);
 
         if (tmpAryListName.Length != tmpAryListQuetion.Length)
         {
@@ -380,7 +369,6 @@ public class ThirdPersonCharacter : MonoBehaviour
 		if (collision.transform.tag == "Player" && isDash) 
 		{
 			//Get Hit
-			Debug.Log("HitPlayer");
 			GameLogic.GetInstance ().PlayerProxy.DropFood (collision.transform.GetComponent<ThirdPersonCharacter>().PlayerID);
 			GetComponent<AudioSource> ().PlayOneShot (HitSound);
 			collision.gameObject.GetComponent<AudioSource> ().PlayOneShot (DropSound);
@@ -407,7 +395,6 @@ public class ThirdPersonCharacter : MonoBehaviour
 
     public void UpdateFruiltList()
     {
-        Debug.LogWarning("FruiltList / Player ID: " + (PlayerID));
         string[] sAryFruitName = GameLogic.GetInstance().PlayerProxy.GetPlayFruitListName(PlayerID);
 
         m_SpearController.DisplayFruilt(sAryFruitName);

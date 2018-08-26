@@ -59,8 +59,6 @@ public class SpearCollider : MonoBehaviour {
 			GetComponent<AudioSource> ().PlayOneShot (HitSound);
 
 			GameLogic.GetInstance ().GeneratorMediator.Kill_Fruit (other.transform.parent.gameObject);
-            Debug.Log("OnTriggerEnter / other name: " + obj.Name);
-
         }
     }
 
