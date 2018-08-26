@@ -49,6 +49,8 @@ public class ThirdPersonCharacter : MonoBehaviour
 	public AudioClip AttackSound;
 	public AudioClip DashSound;
 	public GameObject[] Fruits;
+	public float DashCD;
+	public bool isDashCD;
 
     [SerializeField] SpearCollider m_SpearController;
     [SerializeField] AudioSource m_AudioSourece;
@@ -95,6 +97,16 @@ public class ThirdPersonCharacter : MonoBehaviour
 				isDash = false;
 			}
 		}
+		if(isDashCD)
+		if (DashCD < 1) 
+		{
+			DashCD += Time.deltaTime;
+		}
+		else
+		{
+			DashCD = 0;
+			isDashCD = false;
+		}
 	}
 
 
@@ -132,11 +144,12 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 	public void Dash()
 	{
-		if (!inWall) 
+		if (!inWall && !isDashCD) 
 		{
 			DashTarget = transform.position + transform.forward * DashSpeed;
             PlayAudio(DashSound);
 			isDash = true;
+			isDashCD = true;
 		}
 //		GameLogic.GetInstance ().PlayerProxy.DashCD (PlayerID);
 	}
