@@ -9,11 +9,12 @@ public class FoodGeneratorNew : MonoBehaviour
 	public GameObject[] FruitKind;
 	public Vector3[] FruitPos;
 	public int MaxCount;
+	public AudioClip FullingSound;
 
 
 	void Start () 
 	{
-		CreatFruits ();
+		Reset ();
 		GameLogic.GetInstance ().GeneratorMediator.Regist_FoodGenerator (GetComponent<FoodGeneratorNew> ());
 	}
 
@@ -40,11 +41,18 @@ public class FoodGeneratorNew : MonoBehaviour
 				FruitCreated.Add (Fruits);
 			}
 		}
+		GetComponent<AudioSource> ().PlayOneShot (FullingSound);
 	}
 
 	public void KillFruit(GameObject Fruit)
 	{
 		FruitCreated.Remove (Fruit);
+		Destroy (Fruit);
+	}
+
+	public void AutoKillFruit(GameObject Fruit)
+	{
+		FruitCreated.RemoveAt(0);
 		Destroy (Fruit);
 	}
 
@@ -63,5 +71,6 @@ public class FoodGeneratorNew : MonoBehaviour
 				FruitCreated.Add (Fruits);
 			}
 		}
+		GetComponent<AudioSource> ().PlayOneShot (FullingSound);
 	}
 }
