@@ -36,4 +36,9 @@ public class GeneratorMediator
     {
 		m_FoodGenerator.KillFruit (Fruit);
     }
+
+    public void Auto_Kill_Fruit(GameObject Fruit)
+    {
+        m_FoodGenerator.AutoKillFruit(Fruit);
+    }
 }

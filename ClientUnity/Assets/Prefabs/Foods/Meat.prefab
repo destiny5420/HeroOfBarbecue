@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4988541252634122}
   - component: {fileID: 114058746298374740}
   - component: {fileID: 114489878741029654}
+  - component: {fileID: 114548574367372200}
   m_Layer: 0
   m_Name: Meat
   m_TagString: Food
@@ -245,6 +246,18 @@ MonoBehaviour:
   isU7: 0
   U7: {fileID: 1743140407720892}
   Model: {fileID: 1777489441300864}
+--- !u!114 &114548574367372200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666573159764702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7347a16c3f2c34b7b90d9cc2568d417a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDrop: {fileID: 8300000, guid: 0c673227caf674aa5a626c08c49d8009, type: 3}
 --- !u!136 &136577307206167246
 CapsuleCollider:
   m_ObjectHideFlags: 1

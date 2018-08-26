@@ -3372,8 +3372,8 @@ MonoBehaviour:
   m_GroundCheckDistance: 0.3
   DashSpeed: 10
   Spear: {fileID: 1560292561451142}
-  InputStringH: Horizontal
-  InputStringV: Vertical
+  InputStringH: Horizontal2
+  InputStringV: Vertical2
   Animators: {fileID: 1367442871472098}
   HitSound: {fileID: 8300000, guid: fda9a2e447b9a4ea8b6fcf51dbfa9eb6, type: 3}
   DropSound: {fileID: 8300000, guid: d6b13acac79134b3d9e33b9b131e9c79, type: 3}
@@ -3387,6 +3387,8 @@ MonoBehaviour:
   - {fileID: 1045086515892188, guid: facd74b67c15651459c59ef25e5dd1d9, type: 2}
   - {fileID: 1666573159764702, guid: 911f232f517eb874a84d2abdf07cacaa, type: 2}
   - {fileID: 1430927171055780, guid: 38a8c425593515c4f95b2a9cb4dc86f5, type: 2}
+  DashCD: 0
+  isDashCD: 0
   m_SpearController: {fileID: 114021010993989438}
   m_AudioSourece: {fileID: 82486884888958154}
 --- !u!114 &114369817628643230

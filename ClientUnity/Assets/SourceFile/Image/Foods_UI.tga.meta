@@ -2,8 +2,8 @@ fileFormatVersion: 2
 guid: a72288367008db74f81d349d546ba364
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Player_1
-    21300002: Player_2
+    21300000: Player_2
+    21300002: Player_1
     21300004: Stick_1
     21300006: Stick_2
     21300008: Meat
@@ -110,10 +110,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_1
+      name: Player_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 768
         width: 256
         height: 256
@@ -124,10 +124,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_2
+      name: Player_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 0
         y: 768
         width: 256
         height: 256
