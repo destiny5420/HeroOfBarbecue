@@ -45,7 +45,7 @@ public class PlayerObj
 
     public void InscreaseScore()
     {
-        lScore += 10;
+        lScore += 1;
     }
 
 	public void DropFruit(int playerID)
