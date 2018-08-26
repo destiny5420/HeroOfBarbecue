@@ -13,7 +13,7 @@ public class PlayerUIController : MonoBehaviour
     [SerializeField] RectTransform m_rectTranReadyPanel;
     [SerializeField] Transform m_tranShiny;
     [SerializeField] Transform m_tranMessage;
-
+    [SerializeField] Transform m_tranLine;
     [SerializeField] Image m_imgWinner;
     [SerializeField] Image[] m_imgPlayer1_Wants;
     [SerializeField] Image[] m_imgPlayer2_Wants;
@@ -136,6 +136,10 @@ public class PlayerUIController : MonoBehaviour
     public void SetTimer(float timer)
     {
         m_txtTimer.text = timer.ToString();
+        //Debug.Log("timer: " + timer);
+        //Debug.Log("Result: " + (1.0f / 360.0f)*timer);
+
+        //m_tranLine.localEulerAngles += new Vector3(0.0f, 0.0f, -(1.0f / 360.0f) * timer);
     }
 
     public void Handle_Ready()
