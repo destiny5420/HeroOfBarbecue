@@ -7,6 +7,8 @@ public class PlayerUIController : MonoBehaviour
 {
     [SerializeField] Text m_txtTimer;
     [SerializeField] Text m_txtMessage;
+    [SerializeField] Text m_txtPlayer1_Score;
+    [SerializeField] Text m_txtPlayer2_Score;
     [SerializeField] RectTransform m_rectTranWinnerPanel;
     [SerializeField] RectTransform m_rectTranReadyPanel;
     [SerializeField] Transform m_tranShiny;
@@ -106,6 +108,8 @@ public class PlayerUIController : MonoBehaviour
 
         m_bDelayHideGo = false;
         m_fDelayHideGoTimeClock = m_fDefaultDelayGoTime;
+
+        UpdateScore();
     }
 
     public void SetTimer(float timer)
@@ -146,6 +150,18 @@ public class PlayerUIController : MonoBehaviour
     void SettingMessage(string message)
     {
         m_txtMessage.text = message;
+    }
+
+    public void UpdateScore()
+    {
+        long lScorePlayer1 = GameLogic.GetInstance().PlayerProxy.GetScore(1);
+        long lScorePlayer2 = GameLogic.GetInstance().PlayerProxy.GetScore(2);
+
+        Debug.Log("lScorePlayer1: " + lScorePlayer1);
+        Debug.Log("lScorePlayer2: " + lScorePlayer2);
+
+        m_txtPlayer1_Score.text = lScorePlayer1.ToString();
+        m_txtPlayer2_Score.text = lScorePlayer2.ToString();
     }
 
     #region Complete

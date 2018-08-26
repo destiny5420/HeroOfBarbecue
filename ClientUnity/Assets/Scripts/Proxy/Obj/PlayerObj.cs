@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerObj 
 {
     float fSpeed;
+    long lScore;
     string[] sAryFruitList;
 
     // State
     bool bBeAttack;
     bool bAttacking;
-	bool CanDash;
 
     public PlayerObj()
     {
@@ -21,6 +21,8 @@ public class PlayerObj
 
     public void Init()
     {
+        fSpeed = 0.0f;
+        lScore = 0;
         bBeAttack = false;
         bAttacking = false;
 
@@ -39,6 +41,11 @@ public class PlayerObj
                 break;
             }
         }
+    }
+
+    public void InscreaseScore()
+    {
+        lScore += 10;
     }
 
 	public void DropFruit(int playerID)
@@ -96,12 +103,12 @@ public class PlayerObj
         }
     }
 
-	public bool canDash
-	{
-		get{ 
-			return CanDash;
-		}
-	}
+    public long score
+    {
+        get {
+            return lScore;
+        }
+    }
 
     public bool fruitListIsFull
     {

@@ -44,4 +44,9 @@ public class UIMediator
     {
         m_PlayerUIController.GameOver();
     }
+
+    public void UpdatePlayerScore()
+    {
+        m_PlayerUIController.UpdateScore();
+    }
 }

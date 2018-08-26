@@ -42,7 +42,12 @@ public class PlayerProxy
     {
         m_dicPlayerObj[playerID].AddFruit(fruitName);
         GameLogic.GetInstance().PlayerMediator.UpdatePlayerFruiltList(playerID);
+    }
 
+    public void IncreaseScore(int playerID)
+    {
+        m_dicPlayerObj[playerID].InscreaseScore();
+        GameLogic.GetInstance().UIMediator.UpdatePlayerScore();
     }
 
 	public void DashCD(int playerID)
@@ -75,14 +80,28 @@ public class PlayerProxy
     public bool CheckCanController(int playerID)
     {
         if (m_dicPlayerObj[playerID].beAttack)
+        {
+            Debug.Log("["+playerID+"] beAttack");
             return false;
+        }
 
         if (m_dicPlayerObj[playerID].attacking)
+        {
+            Debug.Log("[" + playerID + "] Attacking");
             return false;
+        }
 
         if (m_dicPlayerObj[playerID].fruitListIsFull)
+        {
+            Debug.Log("[" + playerID + "] FruitListIsFull");   
             return false;
+        }
 
         return true;
+    }
+
+    public long GetScore(int playerID)
+    {
+        return m_dicPlayerObj[playerID].score;
     }
 }
