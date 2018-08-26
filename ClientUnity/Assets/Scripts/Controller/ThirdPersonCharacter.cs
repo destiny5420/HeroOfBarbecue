@@ -205,11 +205,11 @@ public class ThirdPersonCharacter : MonoBehaviour
         string[] tmpAryListQuetion = GameLogic.GetInstance().WantedProxy.GetQuestionForPlayer(PlayerID);
         int iDataLength = tmpAryListName.Length;
 
-        for (int i = 0; i < iDataLength; i++)
-            Debug.Log("ListName["+ i +"]: " + tmpAryListName[i]);
+        //for (int i = 0; i < iDataLength; i++)
+        //    Debug.Log("ListName["+ i +"]: " + tmpAryListName[i]);
         
-        for (int i = 0; i < iDataLength; i++)
-            Debug.Log("Quetion[" + i + "]: " + tmpAryListQuetion[i]);
+        //for (int i = 0; i < iDataLength; i++)
+            //Debug.Log("Quetion[" + i + "]: " + tmpAryListQuetion[i]);
 
         if (tmpAryListName.Length != tmpAryListQuetion.Length)
         {

@@ -81,19 +81,19 @@ public class PlayerProxy
     {
         if (m_dicPlayerObj[playerID].beAttack)
         {
-            Debug.Log("["+playerID+"] beAttack");
+            //Debug.Log("["+playerID+"] beAttack");
             return false;
         }
 
         if (m_dicPlayerObj[playerID].attacking)
         {
-            Debug.Log("[" + playerID + "] Attacking");
+            //Debug.Log("[" + playerID + "] Attacking");
             return false;
         }
 
         if (m_dicPlayerObj[playerID].fruitListIsFull)
         {
-            Debug.Log("[" + playerID + "] FruitListIsFull");   
+            //Debug.Log("[" + playerID + "] FruitListIsFull");   
             return false;
         }
 

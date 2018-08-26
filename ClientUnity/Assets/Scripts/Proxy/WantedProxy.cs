@@ -46,7 +46,7 @@ public class WantedProxy {
 		for (int i = 0; i < 3; i++) 
 		{
 			Player1WantList [i] = Questions [Random.Range (0, Questions.Length)];
-            Debug.Log ("Player 1 CreatNewList Q["+i+"]: " + Player1WantList [i]);
+            //Debug.Log ("Player 1 CreatNewList Q["+i+"]: " + Player1WantList [i]);
 		}
 	}
 
@@ -55,7 +55,7 @@ public class WantedProxy {
 		for (int i = 0; i < 3; i++) 
 		{
 			Player2WantList [i] = Questions [Random.Range (0, Questions.Length)];
-            Debug.Log("Player 2 CreatNewList Q[" + i + "]: " + Player2WantList[i]);
+            //Debug.Log("Player 2 CreatNewList Q[" + i + "]: " + Player2WantList[i]);
 		}
 	}
 

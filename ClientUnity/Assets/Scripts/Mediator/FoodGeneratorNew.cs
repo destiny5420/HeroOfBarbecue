@@ -11,7 +11,6 @@ public class FoodGeneratorNew : MonoBehaviour
 	public int MaxCount;
 	public AudioClip FullingSound;
 
-
 	void Start () 
 	{
 		Reset ();
@@ -71,6 +70,6 @@ public class FoodGeneratorNew : MonoBehaviour
 				FruitCreated.Add (Fruits);
 			}
 		}
-		GetComponent<AudioSource> ().PlayOneShot (FullingSound);
+        GetComponent<AudioSource>().PlayOneShot(FullingSound);
 	}
 }

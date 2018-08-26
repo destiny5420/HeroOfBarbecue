@@ -23,6 +23,7 @@ public class GeneratorMediator
 
     public void Regist_FoodGenerator(FoodGeneratorNew foodGenerator)
     {
+        //Debug.Log("Regist_FoodGenerator");
         m_FoodGenerator = foodGenerator;
     }
 

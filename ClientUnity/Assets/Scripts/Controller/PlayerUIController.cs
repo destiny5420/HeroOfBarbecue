@@ -200,8 +200,8 @@ public class PlayerUIController : MonoBehaviour
         long lScorePlayer1 = GameLogic.GetInstance().PlayerProxy.GetScore(1);
         long lScorePlayer2 = GameLogic.GetInstance().PlayerProxy.GetScore(2);
 
-        Debug.Log("lScorePlayer1: " + lScorePlayer1);
-        Debug.Log("lScorePlayer2: " + lScorePlayer2);
+        //Debug.Log("lScorePlayer1: " + lScorePlayer1);
+        //Debug.Log("lScorePlayer2: " + lScorePlayer2);
 
         m_txtPlayer1_Score.text = lScorePlayer1.ToString();
         m_txtPlayer2_Score.text = lScorePlayer2.ToString();
