@@ -10,6 +10,7 @@ public class PlayerObj
     // State
     bool bBeAttack;
     bool bAttacking;
+	bool CanDash;
 
     public PlayerObj()
     {
@@ -94,6 +95,13 @@ public class PlayerObj
             return bBeAttack;
         }
     }
+
+	public bool canDash
+	{
+		get{ 
+			return CanDash;
+		}
+	}
 
     public bool fruitListIsFull
     {

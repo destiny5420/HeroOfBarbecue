@@ -76,6 +76,10 @@ public class GameLogic : MonoBehaviour
     {
         m_IOMediator.Update();
         m_TimeProxy.Update();
+		if (Input.GetKeyDown (KeyCode.Escape)) 
+		{
+			Application.Quit ();
+		}
     }
 
     public void GameOver()

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerProxy
 {
     Dictionary<int, PlayerObj> m_dicPlayerObj;
+	public bool CanDash;
 
     public void Start () 
     {
@@ -43,6 +44,11 @@ public class PlayerProxy
         GameLogic.GetInstance().PlayerMediator.UpdatePlayerFruiltList(playerID);
 
     }
+
+	public void DashCD(int playerID)
+	{
+		GameLogic.GetInstance ().PlayerMediator.GoDash (playerID);
+	}
 
 	public void DropFood(int playerID)
 	{

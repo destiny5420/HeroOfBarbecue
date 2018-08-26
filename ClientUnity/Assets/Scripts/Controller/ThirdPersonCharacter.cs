@@ -137,6 +137,17 @@ public class ThirdPersonCharacter : MonoBehaviour
 			GetComponent<AudioSource> ().PlayOneShot (DashSound);
 			isDash = true;
 		}
+//		GameLogic.GetInstance ().PlayerProxy.DashCD (PlayerID);
+	}
+
+	public void GoDash()
+	{
+		if (!inWall) 
+		{
+			DashTarget = transform.position + transform.forward * DashSpeed;
+			GetComponent<AudioSource> ().PlayOneShot (DashSound);
+			isDash = true;
+		}
 	}
 
     public void WeaponCollider_Open()

@@ -79,6 +79,18 @@ public class PlayerMediator
         }
     }
 
+	public void GoDash(int playerID)
+	{
+		if (playerID == 1)
+		{
+			m_clsPlayerController1.GoDash ();
+		} 
+		else if (playerID == 2) 
+		{
+			m_clsPlayerController2.GoDash ();
+		}
+	}
+
     public void UpdatePlayerFruiltList(int playerID)
     {
         if (playerID == 1)
