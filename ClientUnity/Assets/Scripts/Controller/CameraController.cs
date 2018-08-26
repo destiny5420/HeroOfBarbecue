@@ -16,14 +16,6 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] Camera m_mainCamera;
 
-    // Shake
-    Vector3 axisShakeMin = new Vector3(1.0f, 1.0f, 1.0f);
-    Vector3 axisShakeMax = new Vector3(1.05f, 1.05f, 1.05f);
-    float timeOfShake;
-    float timeOfShakeStore;
-    bool shake;
-    Vector3 startPos;
-
     void Start()
     {
         Init();
@@ -31,32 +23,12 @@ public class CameraController : MonoBehaviour
 
     void Init()
     {
-        shake = false;
-        startPos = transform.position;
-        timeOfShakeStore = timeOfShake;
+        
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            Debug.Log("Press Camera / B");
-            ShakeCamera(0.5f);
-        }
-    }
 
-    void FixedUpdate()
-    {
-        if (shake)
-        {
-            transform.position = startPos + new Vector3(Random.Range(axisShakeMin.x, axisShakeMax.x), Random.Range(axisShakeMin.y, axisShakeMax.y), Random.Range(axisShakeMin.z, axisShakeMax.z));
-            timeOfShake -= Time.deltaTime;
-            if (timeOfShake <= 0.0f)
-            {
-                shake = false;
-                transform.position = startPos;
-            }
-        }
     }
 
     void LateUpdate()
@@ -104,19 +76,5 @@ public class CameraController : MonoBehaviour
         }
 
         return bounds.center;
-    }
-
-    public void ShakeCamera(float shakeTime = -1.0f)
-    {
-        if (shakeTime > 0.0f)
-        {
-            timeOfShake = shakeTime;
-        }
-        else
-            timeOfShake = timeOfShakeStore;
-
-        shake = true;
-
-        startPos = transform.position;
     }
 }
