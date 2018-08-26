@@ -14,9 +14,13 @@ public class PlayerUIController : MonoBehaviour
     [SerializeField] Transform m_tranShiny;
     [SerializeField] Transform m_tranMessage;
 
+    [SerializeField] Image m_imgWinner;
     [SerializeField] Image[] m_imgPlayer1_Wants;
     [SerializeField] Image[] m_imgPlayer2_Wants;
 
+    [SerializeField] Sprite m_spritePlayer1;
+    [SerializeField] Sprite m_spritePlayer2;
+    [SerializeField] Sprite m_spritePlayerFlat;
     [SerializeField] Sprite m_spriteCorn;
     [SerializeField] Sprite m_spriteFish;
     [SerializeField] Sprite m_spriteGreenPepper;
@@ -118,6 +122,8 @@ public class PlayerUIController : MonoBehaviour
         m_bDelayHideGo = false;
         m_fDelayHideGoTimeClock = m_fDefaultDelayGoTime;
 
+        m_imgWinner.sprite = null;
+
         UpdateScore();
         UpdateWantList();
     }
@@ -155,6 +161,30 @@ public class PlayerUIController : MonoBehaviour
     {
         bRotShiny = true;
         m_rectTranWinnerPanel.transform.position = m_v3WinnerPanelShowPos;
+
+        CalResult();
+    }
+
+    void CalResult()
+    {
+        long lScorePlayer1 = GameLogic.GetInstance().PlayerProxy.GetScore(1);
+        long lScorePlayer2 = GameLogic.GetInstance().PlayerProxy.GetScore(2);
+
+        int iWinNumOfPlayer;
+
+        if (lScorePlayer1 > lScorePlayer2)
+            iWinNumOfPlayer = 1;
+        else if (lScorePlayer1 < lScorePlayer2)
+            iWinNumOfPlayer = 2;
+        else
+            iWinNumOfPlayer = 0;
+
+        if (iWinNumOfPlayer == 1)
+            m_imgWinner.sprite = m_spritePlayer1;
+        else if (iWinNumOfPlayer == 2)
+            m_imgWinner.sprite = m_spritePlayer2;
+        else if (iWinNumOfPlayer == 0)
+            m_imgWinner.sprite = m_spritePlayerFlat;
     }
 
     void SettingMessage(string message)

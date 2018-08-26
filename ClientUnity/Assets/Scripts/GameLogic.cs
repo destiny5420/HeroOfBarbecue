@@ -87,6 +87,7 @@ public class GameLogic : MonoBehaviour
         UIMediator.SetGameBaseTimer(0.0f);
         UIMediator.GameOver();
         TimerProxy.Init();
+
     }
 
     public void StartGame()

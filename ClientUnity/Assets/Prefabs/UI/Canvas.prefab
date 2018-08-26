@@ -1413,6 +1413,7 @@ MonoBehaviour:
   m_rectTranReadyPanel: {fileID: 224260518052851838}
   m_tranShiny: {fileID: 224271102721507578}
   m_tranMessage: {fileID: 224818582858547462}
+  m_imgWinner: {fileID: 114457210707941994}
   m_imgPlayer1_Wants:
   - {fileID: 114208249198737372}
   - {fileID: 114705447651440642}
@@ -1421,6 +1422,9 @@ MonoBehaviour:
   - {fileID: 114974885688282608}
   - {fileID: 114616725008277298}
   - {fileID: 114664567097773986}
+  m_spritePlayer1: {fileID: 21300000, guid: 1b8b6ffb01eb948c6b2d1a75ed8dd121, type: 3}
+  m_spritePlayer2: {fileID: 21300000, guid: 598316ba016fd476ea2e722a6d4c2c77, type: 3}
+  m_spritePlayerFlat: {fileID: 21300000, guid: 08f689582126d4e3d83eae917fb63192, type: 3}
   m_spriteCorn: {fileID: 21300000, guid: 61c8e15acaaab450c97cbb55c197cc19, type: 3}
   m_spriteFish: {fileID: 21300000, guid: e20f7d89d7e84430c8b96890010e2e05, type: 3}
   m_spriteGreenPepper: {fileID: 21300000, guid: b4a0cec941ea74b8695754677cef247f,
