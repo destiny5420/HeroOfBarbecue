@@ -89,10 +89,14 @@ public class SpearCollider : MonoBehaviour {
 
             Mesh tmpMesh = GetMesh(fruitName[i]);
             Material tmpMat = GetMaterial(fruitName[i]);
+			Vector3 tmpRot = GetRotate (fruitName [i]);
+			float tmpScale = GetScale (fruitName [i]);
 
             meshRenderers[i].material = tmpMat;
             mesFilterFruits[i].mesh = tmpMesh;
             mesFilterFruits[i].gameObject.SetActive(true);
+			mesFilterFruits [i].transform.localEulerAngles = tmpRot;
+			mesFilterFruits [i].transform.localScale = new Vector3 (tmpScale,tmpScale,tmpScale);
         }
     }
 
@@ -132,5 +136,43 @@ public class SpearCollider : MonoBehaviour {
             default:
                 return null;
         }
-    }
+	}
+
+	Vector3 GetRotate(string fruitName)
+	{
+		switch (fruitName)
+		{
+		case "Corn":
+			return new Vector3(0,90,0);
+		case "Fish":
+			return new Vector3(90,90,0);
+		case "GreenPepper":
+			return new Vector3(0,90,0);
+		case "Meat":
+			return new Vector3(90,90,0);
+		case "Mushroom":
+			return new Vector3(0,90,0);
+		default:
+			return new Vector3(0,90,0);
+		}
+	}
+
+	float GetScale(string fruitName)
+	{
+		switch (fruitName)
+		{
+		case "Corn":
+			return 1.0f;
+		case "Fish":
+			return 1.0f;
+		case "GreenPepper":
+			return 0.7f;
+		case "Meat":
+			return 0.7f;
+		case "Mushroom":
+			return 0.7f;
+		default:
+			return 1.0f;
+		}
+	}
 }
