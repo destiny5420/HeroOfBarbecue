@@ -56,10 +56,10 @@ public class FoodGeneratorNew : MonoBehaviour
 
         //Destroy(Fruit);
 
-        FruitCreated.Remove(Fruit);
-        Destroy(Fruit);
+        //FruitCreated.Remove(Fruit);
+        //Destroy(Fruit);
 
-        /*
+
         if (FruitListIndex < 3)
         {
             FruitCreated.RemoveAt(FruitListIndex);
@@ -73,7 +73,7 @@ public class FoodGeneratorNew : MonoBehaviour
             Destroy(Fruit);
             FruitListIndex += 1;
         }
-        */
+
 
     }
 
