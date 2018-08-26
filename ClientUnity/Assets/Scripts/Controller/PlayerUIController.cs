@@ -27,6 +27,9 @@ public class PlayerUIController : MonoBehaviour
     [SerializeField] Sprite m_spriteMeat;
     [SerializeField] Sprite m_spriteMushroom;
 
+    [SerializeField] Image[] m_imgAryItem1;
+    [SerializeField] Image[] m_imgAryItem2;
+
     Vector3 m_v3WinnerPanelHidePos = new Vector3(0.0f, 2000.0f, 0.0f);
     Vector3 m_v3WinnerPanelShowPos = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -200,11 +203,30 @@ public class PlayerUIController : MonoBehaviour
         long lScorePlayer1 = GameLogic.GetInstance().PlayerProxy.GetScore(1);
         long lScorePlayer2 = GameLogic.GetInstance().PlayerProxy.GetScore(2);
 
-        //Debug.Log("lScorePlayer1: " + lScorePlayer1);
-        //Debug.Log("lScorePlayer2: " + lScorePlayer2);
+        //m_txtPlayer1_Score.text = lScorePlayer1.ToString();
+        //m_txtPlayer2_Score.text = lScorePlayer2.ToString();
 
-        m_txtPlayer1_Score.text = lScorePlayer1.ToString();
-        m_txtPlayer2_Score.text = lScorePlayer2.ToString();
+        for (int i = 0; i < m_imgAryItem1.Length; i++)
+        {
+            if (lScorePlayer1 != 0)
+            {
+                m_imgAryItem1[i].enabled = true;
+                lScorePlayer1--;
+            }
+            else
+                m_imgAryItem1[i].enabled = false;
+        }
+
+        for (int i = 0; i < m_imgAryItem2.Length; i++)
+        {
+            if (lScorePlayer2 != 0)
+            {
+                m_imgAryItem2[i].enabled = true;
+                lScorePlayer2--;
+            }
+            else
+                m_imgAryItem2[i].enabled = false;
+        }
     }
 
     public void UpdateWantList()
