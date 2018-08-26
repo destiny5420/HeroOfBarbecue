@@ -36,7 +36,7 @@ public class FoodGeneratorNew : MonoBehaviour
 		{
 			for (int i = 0; i < Random.Range (2, 5); i++) 
 			{
-				GameObject Fruits = Instantiate (FruitKind [Random.Range (0, FruitKind.Length)], new Vector3 (Random.Range (-10, 10), 20, Random.Range (-10, 10)), transform.rotation, FruitMother);
+				GameObject Fruits = Instantiate (FruitKind [Random.Range (0, FruitKind.Length)], new Vector3 (Random.Range (-10, 10), 20, Random.Range (-10, 10)), Quaternion.Euler(0,Random.Range(0,360),0), FruitMother);
 				FruitCreated.Add (Fruits);
 			}
 		}
@@ -59,7 +59,7 @@ public class FoodGeneratorNew : MonoBehaviour
 		{
 			for (int i = 0; i < Random.Range (7, 10); i++) 
 			{
-				GameObject Fruits = Instantiate (FruitKind [Random.Range (0, FruitKind.Length)], new Vector3 (Random.Range (-10, 10), 20, Random.Range (-10, 10)), transform.rotation, FruitMother);
+				GameObject Fruits = Instantiate (FruitKind [Random.Range (0, FruitKind.Length)], new Vector3 (Random.Range (-10, 10), 20, Random.Range (-10, 10)), Quaternion.Euler(0,Random.Range(0,360),0), FruitMother);
 				FruitCreated.Add (Fruits);
 			}
 		}
