@@ -380,6 +380,8 @@ public class ThirdPersonCharacter : MonoBehaviour
 		if (collision.transform.tag == "Player" && isDash) 
 		{
 			//Get Hit
+			Debug.Log("HitPlayer");
+			GameLogic.GetInstance ().PlayerProxy.DropFood (collision.transform.GetComponent<ThirdPersonCharacter>().PlayerID);
 			GetComponent<AudioSource> ().PlayOneShot (HitSound);
 			collision.gameObject.GetComponent<AudioSource> ().PlayOneShot (DropSound);
 		}
@@ -413,11 +415,12 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 	public void DropFruit(string FruitName)
 	{
+		Debug.Log (FruitName);
 		for (int i = 0; i < Fruits.Length; i++) 
 		{
 			if (Fruits [i].transform.name == FruitName) 
 			{
-				Instantiate (Fruits [i],transform.position, transform.rotation);
+				Instantiate (Fruits [i],transform.up*10, transform.rotation);
 			}
 		}
 	}

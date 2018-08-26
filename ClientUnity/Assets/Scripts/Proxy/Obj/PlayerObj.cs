@@ -30,10 +30,11 @@ public class PlayerObj
     public void AddFruit(string fruitName)
     {
         for (int i = 0; i < sAryFruitList.Length; i++)
-        {
+		{
             if (sAryFruitList[i] == "")
 			{
-                sAryFruitList[i] = fruitName;
+				sAryFruitList[i] = fruitName;
+				Debug.Log ("Add:"+sAryFruitList [i]);
                 break;
             }
         }
@@ -41,13 +42,14 @@ public class PlayerObj
 
 	public void DropFruit(int playerID)
 	{
-		for (int i = sAryFruitList.Length-1; i > -1; i--) 
+		Debug.Log (sAryFruitList.Length);
+		for (int i = 2; i >= 0; i--)
 		{
 			if (sAryFruitList [i] != "") 
 			{
 				GameLogic.GetInstance ().PlayerMediator.DropFruit (playerID,sAryFruitList [i]);
 				sAryFruitList [i] = "";
-				return;
+				break;
 			}
 		}
 	}
