@@ -74,13 +74,22 @@ public class PlayerProxy
     public bool CheckCanController(int playerID)
     {
         if (m_dicPlayerObj[playerID].beAttack)
+        {
+            Debug.Log("["+playerID+"] beAttack");
             return false;
+        }
 
         if (m_dicPlayerObj[playerID].attacking)
+        {
+            Debug.Log("[" + playerID + "] Attacking");
             return false;
+        }
 
         if (m_dicPlayerObj[playerID].fruitListIsFull)
+        {
+            Debug.Log("[" + playerID + "] FruitListIsFull");   
             return false;
+        }
 
         return true;
     }
