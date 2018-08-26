@@ -4,8 +4,8 @@ using System.Collections;
 public class Food : MonoBehaviour
 {
 
-    float killRate = 16.0f;
-    float nextKill = 16.0f;
+    float killRate = 20.0f;
+    float timer = 0;
 
     public AudioClip soundDrop;
 
@@ -18,18 +18,26 @@ public class Food : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-        if(Time.time > nextKill){
-            nextKill = Time.time + killRate;
-
-            GameLogic.GetInstance().GeneratorMediator.Auto_Kill_Fruit(gameObject);
+        if(timer < killRate)
+        {
+            timer += Time.deltaTime;
         }
+        else
+        {
+            GameLogic.GetInstance().GeneratorMediator.Kill_Fruit(gameObject);
+
+            //Destroy(gameObject);
+            timer = 0;
+        }
+
 
 	}
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Playground")
+        if (collision.transform.name == "Playground")
         {
+            Debug.Log("Hit");
             GetComponent<AudioSource>().PlayOneShot(soundDrop);
         }
 
