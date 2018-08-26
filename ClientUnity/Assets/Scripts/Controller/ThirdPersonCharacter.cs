@@ -162,6 +162,7 @@ public class ThirdPersonCharacter : MonoBehaviour
         {
             Debug.LogError("SuccessGetScore");
 			GameLogic.GetInstance().WantedProxy.CreateNewList(PlayerID);
+            GameLogic.GetInstance().PlayerProxy.IncreaseScore(PlayerID);
 			GetComponent<AudioSource> ().PlayOneShot (EatSound);
         }
 		else
