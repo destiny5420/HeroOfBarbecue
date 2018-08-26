@@ -43,9 +43,9 @@ public class FoodGeneratorNew : MonoBehaviour
             {
                 GameObject Fruits = Instantiate(FruitKind[Random.Range(0, FruitKind.Length)], new Vector3(Random.Range(-10, 10), 20, Random.Range(-10, 10)), Quaternion.Euler(0, Random.Range(0, 360), 0), FruitMother);
                 FruitCreated.Add(Fruits);
-            }
+			}
+			GetComponent<AudioSource>().PlayOneShot(FullingSound);
         }
-        GetComponent<AudioSource>().PlayOneShot(FullingSound);
     }
 
     public void KillFruit(GameObject Fruit)
@@ -93,9 +93,9 @@ public class FoodGeneratorNew : MonoBehaviour
             {
                 GameObject Fruits = Instantiate(FruitKind[Random.Range(0, FruitKind.Length)], new Vector3(Random.Range(-10, 10), 20, Random.Range(-10, 10)), Quaternion.Euler(0, Random.Range(0, 360), 0), FruitMother);
                 FruitCreated.Add(Fruits);
-            }
+			}
+			GetComponent<AudioSource>().PlayOneShot(FullingSound);
         }
-        GetComponent<AudioSource>().PlayOneShot(FullingSound);
     }
 
 
