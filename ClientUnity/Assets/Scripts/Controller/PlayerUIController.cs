@@ -246,6 +246,7 @@ public class PlayerUIController : MonoBehaviour
         if (m_bStartGame)
         {
             m_bDelayHideGo = true;
+            GameLogic.GetInstance().GameProxy.gamePause = false;
         }
         else
             Handle_DelayGo();

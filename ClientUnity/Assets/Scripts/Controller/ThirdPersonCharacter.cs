@@ -112,7 +112,8 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 	public void Move(Vector3 move, bool crouch, bool jump)
 	{
-
+        if (GameLogic.GetInstance().GameProxy.gamePause == true)
+            return;
 		// convert the world relative moveInput vector into a local-relative
 		// turn amount and forward amount required to head in the desired
 		// direction.

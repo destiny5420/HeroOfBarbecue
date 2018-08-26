@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class GameProxy 
 {
-	public void Start () 
-    {
-		
-	}
-	
+    bool m_bGamePause;
+    	
+    public void Start()
+    {}
+
     public void Init()
     {
-        
+        m_bGamePause = false;
     }
 
-    public void Update ()
+    public bool gamePause
     {
-		
-	}
+        get {
+            return m_bGamePause;
+        }
+        set {
+            m_bGamePause = value;
+        }
+    }
 }

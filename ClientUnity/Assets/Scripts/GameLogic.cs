@@ -87,7 +87,7 @@ public class GameLogic : MonoBehaviour
         UIMediator.SetGameBaseTimer(0.0f);
         UIMediator.GameOver();
         TimerProxy.Init();
-
+        GameProxy.gamePause = true;
     }
 
     public void StartGame()
@@ -156,5 +156,6 @@ public class GameLogic : MonoBehaviour
 			return m_WantedProxy;
 		}
 	}
+
     #endregion
 }

@@ -41,6 +41,9 @@ public class PlayerMediator
 
 	public void Player_1_IO(IO_TYPE ioType)
     {
+        if (GameLogic.GetInstance().GameProxy.gamePause == true)
+            return;
+
         if (ioType == IO_TYPE.Press_Dash) 
 		{
             if (GameLogic.GetInstance().PlayerProxy.CheckCanController(1) == false)
@@ -61,6 +64,9 @@ public class PlayerMediator
 
 	public void Player_2_IO(IO_TYPE ioType)
     {        
+        if (GameLogic.GetInstance().GameProxy.gamePause == true)
+            return;
+
 		if (ioType == IO_TYPE.Press_Dash) 
 		{
             if (GameLogic.GetInstance().PlayerProxy.CheckCanController(2) == false)
