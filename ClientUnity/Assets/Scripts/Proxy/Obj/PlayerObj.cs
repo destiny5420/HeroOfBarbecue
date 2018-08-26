@@ -94,4 +94,18 @@ public class PlayerObj
             return bBeAttack;
         }
     }
+
+    public bool fruitListIsFull
+    {
+        get {
+            
+            for (int i = 0; i < sAryFruitList.Length; i++)
+            {
+                if (sAryFruitList[i] == "")
+                    return false;
+            }
+
+            return true;
+        }
+    }
 }

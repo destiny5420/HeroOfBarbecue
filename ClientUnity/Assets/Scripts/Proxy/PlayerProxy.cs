@@ -39,12 +39,6 @@ public class PlayerProxy
 
     public void IncreaseFoodList(int playerID, string fruitName)
     {
-        if (m_dicPlayerObj[playerID].CheckCanAddFruilt() == false)
-        {
-            Debug.LogWarning("Spear is full~~~~");
-            return;
-        }
-
         m_dicPlayerObj[playerID].AddFruit(fruitName);
         GameLogic.GetInstance().PlayerMediator.UpdatePlayerFruiltList(playerID);
 
@@ -78,6 +72,9 @@ public class PlayerProxy
             return false;
 
         if (m_dicPlayerObj[playerID].attacking)
+            return false;
+
+        if (m_dicPlayerObj[playerID].fruitListIsFull)
             return false;
 
         return true;

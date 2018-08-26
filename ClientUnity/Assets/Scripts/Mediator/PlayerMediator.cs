@@ -41,17 +41,16 @@ public class PlayerMediator
 
 	public void Player_1_IO(IO_TYPE ioType)
     {
-		//Debug.Log("Player_1_IO / IO: " + ioType.ToString());
-
-        if (GameLogic.GetInstance().PlayerProxy.CheckCanController(1) == false)
-            return;
-
         if (ioType == IO_TYPE.Press_Dash) 
 		{
+            if (GameLogic.GetInstance().PlayerProxy.CheckCanController(1) == false)
+                return;
 			m_clsPlayerController1.Dash ();
 		}
 		else if (ioType == IO_TYPE.Press_Attack) 
 		{
+            if (GameLogic.GetInstance().PlayerProxy.CheckCanController(1) == false)
+                return;
 			m_clsPlayerController1.Attack ();
 		}
         else if (ioType == IO_TYPE.Press_Eat)
@@ -61,18 +60,17 @@ public class PlayerMediator
     }
 
 	public void Player_2_IO(IO_TYPE ioType)
-    {
-		//Debug.Log("Player_2_IO / IO: " + ioType.ToString());
-
-        if (GameLogic.GetInstance().PlayerProxy.CheckCanController(2) == false)
-            return;
-        
+    {        
 		if (ioType == IO_TYPE.Press_Dash) 
 		{
+            if (GameLogic.GetInstance().PlayerProxy.CheckCanController(2) == false)
+                return;
 			m_clsPlayerController2.Dash ();
 		}
 		else if (ioType == IO_TYPE.Press_Attack) 
 		{
+            if (GameLogic.GetInstance().PlayerProxy.CheckCanController(2) == false)
+                return;
 			m_clsPlayerController2.Attack ();
 		}
         else if (ioType == IO_TYPE.Press_Eat)
