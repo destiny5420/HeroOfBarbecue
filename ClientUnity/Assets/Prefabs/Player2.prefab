@@ -3355,6 +3355,7 @@ MonoBehaviour:
   - {fileID: 1666573159764702, guid: 911f232f517eb874a84d2abdf07cacaa, type: 2}
   - {fileID: 1430927171055780, guid: 38a8c425593515c4f95b2a9cb4dc86f5, type: 2}
   m_SpearController: {fileID: 114789027040455922}
+  m_AudioSourece: {fileID: 82488227586306944}
 --- !u!114 &114789027040455922
 MonoBehaviour:
   m_ObjectHideFlags: 1

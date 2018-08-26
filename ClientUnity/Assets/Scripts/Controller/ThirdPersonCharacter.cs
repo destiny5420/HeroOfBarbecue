@@ -51,6 +51,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 	public GameObject[] Fruits;
 
     [SerializeField] SpearCollider m_SpearController;
+    [SerializeField] AudioSource m_AudioSourece;
 
 	void Start()
 	{
@@ -134,7 +135,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 		if (!inWall) 
 		{
 			DashTarget = transform.position + transform.forward * DashSpeed;
-			GetComponent<AudioSource> ().PlayOneShot (DashSound);
+            PlayAudio(DashSound);
 			isDash = true;
 		}
 //		GameLogic.GetInstance ().PlayerProxy.DashCD (PlayerID);
@@ -145,7 +146,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 		if (!inWall) 
 		{
 			DashTarget = transform.position + transform.forward * DashSpeed;
-			GetComponent<AudioSource> ().PlayOneShot (DashSound);
+            PlayAudio(DashSound);
 			isDash = true;
 		}
 	}
@@ -164,7 +165,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 	{
         GameLogic.GetInstance().PlayerProxy.SwitchState_Attack(PlayerID, true);
 		Animators.GetComponent<Animator> ().Play("attack");
-		GetComponent<AudioSource> ().PlayOneShot (AttackSound);
+        PlayAudio(AttackSound);
 	}
 
     public void Eat()
@@ -174,11 +175,11 @@ public class ThirdPersonCharacter : MonoBehaviour
             Debug.LogError("SuccessGetScore");
 			GameLogic.GetInstance().WantedProxy.CreateNewList(PlayerID);
             GameLogic.GetInstance().PlayerProxy.IncreaseScore(PlayerID);
-			GetComponent<AudioSource> ().PlayOneShot (EatSound);
+            PlayAudio(EatSound);
         }
 		else
 		{
-			GetComponent<AudioSource> ().PlayOneShot (WroundSound);
+            PlayAudio(WroundSound);
 		}
 
         GameLogic.GetInstance().PlayerProxy.CleanFoodList(PlayerID);
@@ -382,8 +383,9 @@ public class ThirdPersonCharacter : MonoBehaviour
 		{
 			//Get Hit
 			GameLogic.GetInstance ().PlayerProxy.DropFood (collision.transform.GetComponent<ThirdPersonCharacter>().PlayerID);
-			GetComponent<AudioSource> ().PlayOneShot (HitSound);
-			collision.gameObject.GetComponent<AudioSource> ().PlayOneShot (DropSound);
+            PlayAudio(HitSound);
+
+            collision.gameObject.GetComponent<ThirdPersonCharacter>().PlayAudio(DropSound);
 		}
 	}
 
@@ -423,4 +425,13 @@ public class ThirdPersonCharacter : MonoBehaviour
 			}
 		}
 	}
+
+    public void PlayAudio(AudioClip audioClip)
+    {
+        if (m_AudioSourece.isPlaying)
+            m_AudioSourece.Stop();
+        
+        m_AudioSourece.clip = audioClip;
+        m_AudioSourece.Play();
+    }
 }
