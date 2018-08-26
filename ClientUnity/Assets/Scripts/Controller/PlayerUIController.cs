@@ -57,6 +57,8 @@ public class PlayerUIController : MonoBehaviour
     const float m_fDelayHideGoTime = 1.0f;
     float m_fDelayHideGoTimeClock;
 
+	public AudioClip FinishSound;
+
     void Awake()
     {
         GameLogic.GetInstance().UIMediator.Regist_PlayerUIController(this);
@@ -163,6 +165,7 @@ public class PlayerUIController : MonoBehaviour
         m_rectTranWinnerPanel.transform.position = m_v3WinnerPanelShowPos;
 
         CalResult();
+		GetComponent<AudioSource> ().PlayOneShot (FinishSound);
     }
 
     void CalResult()
