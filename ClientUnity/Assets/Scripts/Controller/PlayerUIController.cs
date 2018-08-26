@@ -135,11 +135,11 @@ public class PlayerUIController : MonoBehaviour
 
     public void SetTimer(float timer)
     {
-        m_txtTimer.text = timer.ToString();
-        //Debug.Log("timer: " + timer);
-        //Debug.Log("Result: " + (1.0f / 360.0f)*timer);
+        //m_txtTimer.text = timer.ToString();
 
-        //m_tranLine.localEulerAngles += new Vector3(0.0f, 0.0f, -(1.0f / 360.0f) * timer);
+        Vector3 v3NewAngle = new Vector3(0.0f ,0.0f, -(1 - (timer / 180.0f)) * 360.0f);
+        Debug.Log("timer: " + timer + " / v3NewAngle: " + v3NewAngle);
+        m_tranLine.localEulerAngles = v3NewAngle;
     }
 
     public void Handle_Ready()
