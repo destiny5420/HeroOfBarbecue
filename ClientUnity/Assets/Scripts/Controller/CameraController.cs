@@ -2,31 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour 
+public class CameraController : MonoBehaviour
 {
     [SerializeField] List<Transform> m_tranTarget;
     Vector3 m_v3Offset = new Vector3(0.0f, 35.0f, -35.0f);
 
-    [SerializeField] float m_fSmoothTime = 0.5f;
+    float m_fSmoothTime = 0.15f;
     Vector3 v3Velocity;
 
-    [SerializeField] float m_fMinZoom = 40.0f;
-    [SerializeField] float m_fMaxZoom = 20.0f;
-    [SerializeField] float m_fZoomLimit = 50.0f;
+    float m_fMinZoom = 20.0f;
+    float m_fMaxZoom = 10.0f;
+    float m_fZoomLimit = 50.0f;
+
     [SerializeField] Camera m_mainCamera;
 
-	void Start () 
+    void Start()
     {
-
-	}
-	
-    void Init()
-    {
-
+        Init();
     }
 
-	void Update () 
+    void Init()
     {
+        
+    }
+
+    void Update()
+    {
+
     }
 
     void LateUpdate()
