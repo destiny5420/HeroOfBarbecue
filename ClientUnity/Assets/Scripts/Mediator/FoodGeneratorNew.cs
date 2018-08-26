@@ -11,9 +11,12 @@ public class FoodGeneratorNew : MonoBehaviour
     public int MaxCount;
     public AudioClip FullingSound;
 
+
+
     int FruitListIndex = 0;
 
-    void Start()
+
+	void Start()
     {
         Reset();
         GameLogic.GetInstance().GeneratorMediator.Regist_FoodGenerator(GetComponent<FoodGeneratorNew>());
@@ -94,4 +97,8 @@ public class FoodGeneratorNew : MonoBehaviour
         }
         GetComponent<AudioSource>().PlayOneShot(FullingSound);
     }
+
+
+
+
 }

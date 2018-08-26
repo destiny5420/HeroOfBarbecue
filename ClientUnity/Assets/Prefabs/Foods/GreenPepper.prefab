@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4100573147264664}
   - component: {fileID: 114025063801360734}
+  - component: {fileID: 114587987109433192}
   m_Layer: 0
   m_Name: GreenPepper
   m_TagString: Food
@@ -141,6 +142,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sName: GreenPepper
+--- !u!114 &114587987109433192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1045086515892188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7347a16c3f2c34b7b90d9cc2568d417a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDrop: {fileID: 8300000, guid: 0c673227caf674aa5a626c08c49d8009, type: 3}
 --- !u!135 &135838246454303372
 SphereCollider:
   m_ObjectHideFlags: 1

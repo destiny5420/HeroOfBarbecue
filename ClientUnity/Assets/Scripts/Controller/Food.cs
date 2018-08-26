@@ -7,6 +7,8 @@ public class Food : MonoBehaviour
     float killRate = 16.0f;
     float nextKill = 16.0f;
 
+    public AudioClip soundDrop;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -23,4 +25,15 @@ public class Food : MonoBehaviour
         }
 
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Playground")
+        {
+            GetComponent<AudioSource>().PlayOneShot(soundDrop);
+        }
+
+    }
+
+
 }
