@@ -50,6 +50,12 @@ public class PlayerProxy
 
     }
 
+	public void DropFood(int playerID)
+	{
+		m_dicPlayerObj[playerID].DropFruit(playerID);
+		GameLogic.GetInstance().PlayerMediator.UpdatePlayerFruiltList(playerID);
+	}
+
     public void CleanFoodList(int playerID)
     {
         m_dicPlayerObj[playerID].CleanFruit();

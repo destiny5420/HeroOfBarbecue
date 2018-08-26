@@ -93,5 +93,17 @@ public class PlayerMediator
             if (m_clsPlayerController2 != null)
                 m_clsPlayerController2.UpdateFruiltList();
         }
-    }
+	}
+
+	public void DropFruit(int playerID , string FruitName)
+	{
+		if (playerID == 1)
+		{
+			m_clsPlayerController1.DropFruit(FruitName);
+		}
+		else if (playerID == 2)
+		{
+			m_clsPlayerController2.DropFruit(FruitName);
+		}
+	}
 }

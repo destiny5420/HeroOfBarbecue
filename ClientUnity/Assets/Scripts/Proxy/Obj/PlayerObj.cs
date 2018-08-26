@@ -32,12 +32,25 @@ public class PlayerObj
         for (int i = 0; i < sAryFruitList.Length; i++)
         {
             if (sAryFruitList[i] == "")
-            {
+			{
                 sAryFruitList[i] = fruitName;
                 break;
             }
         }
     }
+
+	public void DropFruit(int playerID)
+	{
+		for (int i = sAryFruitList.Length-1; i > -1; i--) 
+		{
+			if (sAryFruitList [i] != "") 
+			{
+				GameLogic.GetInstance ().PlayerMediator.DropFruit (playerID,sAryFruitList [i]);
+				sAryFruitList [i] = "";
+				return;
+			}
+		}
+	}
 
     public void CleanFruit()
     {

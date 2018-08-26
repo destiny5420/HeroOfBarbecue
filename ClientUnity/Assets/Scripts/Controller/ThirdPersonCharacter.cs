@@ -48,6 +48,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 	public AudioClip WroundSound;
 	public AudioClip AttackSound;
 	public AudioClip DashSound;
+	public GameObject[] Fruits;
 
     [SerializeField] SpearCollider m_SpearController;
 
@@ -379,7 +380,6 @@ public class ThirdPersonCharacter : MonoBehaviour
 		if (collision.transform.tag == "Player" && isDash) 
 		{
 			//Get Hit
-			Debug.Log(collision.transform.name);
 			GetComponent<AudioSource> ().PlayOneShot (HitSound);
 			collision.gameObject.GetComponent<AudioSource> ().PlayOneShot (DropSound);
 		}
@@ -410,4 +410,15 @@ public class ThirdPersonCharacter : MonoBehaviour
 
         m_SpearController.DisplayFruilt(sAryFruitName);
     }
+
+	public void DropFruit(string FruitName)
+	{
+		for (int i = 0; i < Fruits.Length; i++) 
+		{
+			if (Fruits [i].transform.name == FruitName) 
+			{
+				Instantiate (Fruits [i],transform.position, transform.rotation);
+			}
+		}
+	}
 }
