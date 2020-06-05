@@ -9,6 +9,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Meat
+    4300002: meat
   externalObjects: {}
   materials:
     importMaterials: 1
